@@ -40,18 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bilet.cs" />
-    <Compile Include="BiletBilgi.cs" />
-    <Compile Include="Calisan.cs" />
-    <Compile Include="Musteri.cs" />
-    <Compile Include="MusteriDetay.cs" />
+    <Compile Include="Classes\Bilet.cs" />
+    <Compile Include="Classes\BiletBilgi.cs" />
+    <Compile Include="Classes\Calisan.cs" />
+    <Compile Include="Classes\Musteri.cs" />
+    <Compile Include="Classes\MusteriDetay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RezerveBilet.cs" />
-    <Compile Include="SatilanBilet.cs" />
-    <Compile Include="Sefer.cs" />
-    <Compile Include="SeferSaat.cs" />
-    <Compile Include="SeferSeferSaat.cs" />
-    <Compile Include="Unvan.cs" />
+    <Compile Include="Classes\RezerveBilet.cs" />
+    <Compile Include="Classes\SatilanBilet.cs" />
+    <Compile Include="Classes\Sefer.cs" />
+    <Compile Include="Classes\SeferSaat.cs" />
+    <Compile Include="Classes\SeferSeferSaat.cs" />
+    <Compile Include="Classes\Unvan.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
