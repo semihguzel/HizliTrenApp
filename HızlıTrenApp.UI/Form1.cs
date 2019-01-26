@@ -19,7 +19,7 @@ namespace HızlıTrenApp.UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Visual studio'yu 15.5.7 den üst güncellemeye alın demişler
+            
         }
     }
 }
