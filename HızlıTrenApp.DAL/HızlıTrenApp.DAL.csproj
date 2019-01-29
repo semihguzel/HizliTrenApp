@@ -50,7 +50,7 @@
     <Compile Include="Mappings\BiletBilgiMapping.cs" />
     <Compile Include="Mappings\BiletMapping.cs" />
     <Compile Include="Mappings\CalisanMapping.cs" />
-    <Compile Include="Mappings\Context.cs" />
+    <Compile Include="Context.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Mappings\MusteriDetayMapping.cs" />
     <Compile Include="Mappings\MusteriMapping.cs" />
@@ -61,6 +61,9 @@
     <Compile Include="Mappings\SeferSaatMapping.cs" />
     <Compile Include="Mappings\SeferSeferSaatMapping.cs" />
     <Compile Include="Mappings\UnvanMapping.cs" />
+    <Compile Include="Repository\Abstract\IRepository.cs" />
+    <Compile Include="Repository\Abstract\EFRepository.cs" />
+    <Compile Include="Repository\Concrete\CalisanConcrete.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -72,5 +75,6 @@
       <Name>HızlıTrenApp.DATA</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
