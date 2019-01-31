@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btnSeferleriListele = new MetroFramework.Controls.MetroButton();
 			this.nmrYolcuSayisi = new System.Windows.Forms.NumericUpDown();
 			this.dtpDonusTarihi = new System.Windows.Forms.DateTimePicker();
@@ -45,19 +44,11 @@
 			this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
 			this.grpBilet = new System.Windows.Forms.GroupBox();
 			this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.nmrYolcuSayisi)).BeginInit();
 			this.grpBilet.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = global::HızlıTrenApp.UI.Properties.Resources.hizlitren;
-			this.pictureBox1.Location = new System.Drawing.Point(357, 87);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(381, 309);
-			this.pictureBox1.TabIndex = 4;
-			this.pictureBox1.TabStop = false;
 			// 
 			// btnSeferleriListele
 			// 
@@ -84,7 +75,7 @@
             0});
 			this.nmrYolcuSayisi.Name = "nmrYolcuSayisi";
 			this.nmrYolcuSayisi.Size = new System.Drawing.Size(39, 21);
-			this.nmrYolcuSayisi.TabIndex = 6;
+			this.nmrYolcuSayisi.TabIndex = 5;
 			this.nmrYolcuSayisi.Value = new decimal(new int[] {
             1,
             0,
@@ -96,19 +87,19 @@
 			this.dtpDonusTarihi.Location = new System.Drawing.Point(23, 233);
 			this.dtpDonusTarihi.Name = "dtpDonusTarihi";
 			this.dtpDonusTarihi.Size = new System.Drawing.Size(200, 21);
-			this.dtpDonusTarihi.TabIndex = 5;
+			this.dtpDonusTarihi.TabIndex = 4;
 			// 
 			// dtpGidisTarihi
 			// 
 			this.dtpGidisTarihi.Location = new System.Drawing.Point(22, 173);
 			this.dtpGidisTarihi.Name = "dtpGidisTarihi";
 			this.dtpGidisTarihi.Size = new System.Drawing.Size(200, 21);
-			this.dtpGidisTarihi.TabIndex = 5;
+			this.dtpGidisTarihi.TabIndex = 3;
 			// 
 			// rdbGidisDonus
 			// 
 			this.rdbGidisDonus.AutoSize = true;
-			this.rdbGidisDonus.Location = new System.Drawing.Point(107, 34);
+			this.rdbGidisDonus.Location = new System.Drawing.Point(104, 35);
 			this.rdbGidisDonus.Name = "rdbGidisDonus";
 			this.rdbGidisDonus.Size = new System.Drawing.Size(86, 15);
 			this.rdbGidisDonus.TabIndex = 4;
@@ -119,10 +110,10 @@
 			// rdbTekyon
 			// 
 			this.rdbTekyon.AutoSize = true;
-			this.rdbTekyon.Location = new System.Drawing.Point(22, 34);
+			this.rdbTekyon.Location = new System.Drawing.Point(23, 35);
 			this.rdbTekyon.Name = "rdbTekyon";
 			this.rdbTekyon.Size = new System.Drawing.Size(66, 15);
-			this.rdbTekyon.TabIndex = 4;
+			this.rdbTekyon.TabIndex = 0;
 			this.rdbTekyon.TabStop = true;
 			this.rdbTekyon.Text = "Tek Yön";
 			this.rdbTekyon.UseVisualStyleBackColor = true;
@@ -179,7 +170,7 @@
 			this.cmbTip.Location = new System.Drawing.Point(182, 268);
 			this.cmbTip.Name = "cmbTip";
 			this.cmbTip.Size = new System.Drawing.Size(121, 29);
-			this.cmbTip.TabIndex = 2;
+			this.cmbTip.TabIndex = 6;
 			// 
 			// cmbNereden
 			// 
@@ -188,7 +179,7 @@
 			this.cmbNereden.Location = new System.Drawing.Point(22, 94);
 			this.cmbNereden.Name = "cmbNereden";
 			this.cmbNereden.Size = new System.Drawing.Size(121, 29);
-			this.cmbNereden.TabIndex = 2;
+			this.cmbNereden.TabIndex = 1;
 			// 
 			// metroLabel2
 			// 
@@ -233,6 +224,15 @@
 			this.metroLabel1.TabIndex = 3;
 			this.metroLabel1.Text = "Bilet Satış ve Rezervasyon Sistemi";
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::HızlıTrenApp.UI.Properties.Resources.hizlitren;
+			this.pictureBox1.Location = new System.Drawing.Point(357, 87);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(381, 309);
+			this.pictureBox1.TabIndex = 4;
+			this.pictureBox1.TabStop = false;
+			// 
 			// frmGiris
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,10 +247,10 @@
 			this.Text = "Hızlı Tren Bileti";
 			this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Right;
 			this.Load += new System.EventHandler(this.frmGiris_Load);
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nmrYolcuSayisi)).EndInit();
 			this.grpBilet.ResumeLayout(false);
 			this.grpBilet.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
