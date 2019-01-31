@@ -13,6 +13,7 @@ namespace HızlıTrenApp.DATA
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public string Adres { get; set; }
+        public bool Cinsiyet { get; set; }  
         public DateTime DogumTarihi { get; set; }
         public DateTime IseAlimTarihi { get; set; }
         public string TamAdi

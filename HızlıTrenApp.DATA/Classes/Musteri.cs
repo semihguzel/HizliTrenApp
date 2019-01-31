@@ -11,6 +11,7 @@ namespace HızlıTrenApp.DATA
         public int MusteriID { get; set; }
         public string Ad { get; set; }
         public string Soyad { get; set; }
+        public bool Cinsiyet { get; set; }
         public string TamAdi
         {
             get
