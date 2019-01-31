@@ -22,6 +22,7 @@ namespace HızlıTrenApp.UI
 			cmbTip.Items.Add("Ekonomi");
 			cmbTip.Items.Add("Business");
 			cmbTip.SelectedIndex = 0;
+			rdbTekyon.Checked = true;
 		}
 		private void btnSeferleriListele_Click(object sender, EventArgs e)
 		{
