@@ -68,7 +68,7 @@
 			this.btnSorgula.Location = new System.Drawing.Point(136, 104);
 			this.btnSorgula.Name = "btnSorgula";
 			this.btnSorgula.Size = new System.Drawing.Size(75, 23);
-			this.btnSorgula.TabIndex = 8;
+			this.btnSorgula.TabIndex = 2;
 			this.btnSorgula.Text = "Sorgula";
 			// 
 			// txtSoyad
@@ -76,7 +76,7 @@
 			this.txtSoyad.Location = new System.Drawing.Point(87, 67);
 			this.txtSoyad.Name = "txtSoyad";
 			this.txtSoyad.Size = new System.Drawing.Size(124, 20);
-			this.txtSoyad.TabIndex = 6;
+			this.txtSoyad.TabIndex = 1;
 			// 
 			// metroLabel2
 			// 
@@ -92,7 +92,7 @@
 			this.txtPnrNo.Location = new System.Drawing.Point(87, 39);
 			this.txtPnrNo.Name = "txtPnrNo";
 			this.txtPnrNo.Size = new System.Drawing.Size(124, 20);
-			this.txtPnrNo.TabIndex = 7;
+			this.txtPnrNo.TabIndex = 0;
 			// 
 			// metroLabel1
 			// 
@@ -108,7 +108,7 @@
 			this.btnDegistir.Location = new System.Drawing.Point(476, 389);
 			this.btnDegistir.Name = "btnDegistir";
 			this.btnDegistir.Size = new System.Drawing.Size(95, 23);
-			this.btnDegistir.TabIndex = 9;
+			this.btnDegistir.TabIndex = 5;
 			this.btnDegistir.Text = "Değistir";
 			// 
 			// btnIptalEt
@@ -116,7 +116,7 @@
 			this.btnIptalEt.Location = new System.Drawing.Point(330, 389);
 			this.btnIptalEt.Name = "btnIptalEt";
 			this.btnIptalEt.Size = new System.Drawing.Size(116, 23);
-			this.btnIptalEt.TabIndex = 10;
+			this.btnIptalEt.TabIndex = 4;
 			this.btnIptalEt.Text = "İptal Et";
 			// 
 			// btnSatisaCevir
@@ -124,7 +124,7 @@
 			this.btnSatisaCevir.Location = new System.Drawing.Point(204, 389);
 			this.btnSatisaCevir.Name = "btnSatisaCevir";
 			this.btnSatisaCevir.Size = new System.Drawing.Size(96, 23);
-			this.btnSatisaCevir.TabIndex = 11;
+			this.btnSatisaCevir.TabIndex = 3;
 			this.btnSatisaCevir.Text = "Satışa Çevir";
 			// 
 			// frmRezervasyonlarim

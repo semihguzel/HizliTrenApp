@@ -56,7 +56,7 @@
 			this.flpKoltuklar.Location = new System.Drawing.Point(38, 63);
 			this.flpKoltuklar.Name = "flpKoltuklar";
 			this.flpKoltuklar.Size = new System.Drawing.Size(717, 246);
-			this.flpKoltuklar.TabIndex = 1;
+			this.flpKoltuklar.TabIndex = 0;
 			// 
 			// grpYolcuBilgileri
 			// 
@@ -101,7 +101,7 @@
 			this.txtAd.Location = new System.Drawing.Point(68, 17);
 			this.txtAd.Name = "txtAd";
 			this.txtAd.Size = new System.Drawing.Size(142, 23);
-			this.txtAd.TabIndex = 1;
+			this.txtAd.TabIndex = 0;
 			// 
 			// metroLabel2
 			// 
@@ -133,7 +133,7 @@
 			this.txtTcNo.Location = new System.Drawing.Point(68, 103);
 			this.txtTcNo.Name = "txtTcNo";
 			this.txtTcNo.Size = new System.Drawing.Size(142, 23);
-			this.txtTcNo.TabIndex = 1;
+			this.txtTcNo.TabIndex = 2;
 			// 
 			// lbl
 			// 
@@ -151,7 +151,7 @@
 			this.rdbErkek.Location = new System.Drawing.Point(75, 145);
 			this.rdbErkek.Name = "rdbErkek";
 			this.rdbErkek.Size = new System.Drawing.Size(62, 21);
-			this.rdbErkek.TabIndex = 2;
+			this.rdbErkek.TabIndex = 3;
 			this.rdbErkek.TabStop = true;
 			this.rdbErkek.Text = "Erkek";
 			this.rdbErkek.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@
 			this.dateTimePicker1.Location = new System.Drawing.Point(350, 17);
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-			this.dateTimePicker1.TabIndex = 3;
+			this.dateTimePicker1.TabIndex = 4;
 			// 
 			// metroLabel5
 			// 
@@ -198,7 +198,7 @@
 			this.txtEmail.Location = new System.Drawing.Point(350, 61);
 			this.txtEmail.Name = "txtEmail";
 			this.txtEmail.Size = new System.Drawing.Size(142, 23);
-			this.txtEmail.TabIndex = 1;
+			this.txtEmail.TabIndex = 5;
 			// 
 			// metroLabel6
 			// 
@@ -214,7 +214,7 @@
 			this.txtTelefon.Location = new System.Drawing.Point(350, 103);
 			this.txtTelefon.Name = "txtTelefon";
 			this.txtTelefon.Size = new System.Drawing.Size(142, 23);
-			this.txtTelefon.TabIndex = 1;
+			this.txtTelefon.TabIndex = 6;
 			// 
 			// metroLabel7
 			// 
@@ -232,18 +232,19 @@
 			this.metroComboBox1.Location = new System.Drawing.Point(350, 143);
 			this.metroComboBox1.Name = "metroComboBox1";
 			this.metroComboBox1.Size = new System.Drawing.Size(142, 29);
-			this.metroComboBox1.TabIndex = 4;
+			this.metroComboBox1.TabIndex = 7;
 			// 
 			// btnOdemeyeGec
 			// 
 			this.btnOdemeyeGec.Location = new System.Drawing.Point(548, 141);
 			this.btnOdemeyeGec.Name = "btnOdemeyeGec";
 			this.btnOdemeyeGec.Size = new System.Drawing.Size(109, 31);
-			this.btnOdemeyeGec.TabIndex = 11;
+			this.btnOdemeyeGec.TabIndex = 8;
 			this.btnOdemeyeGec.Text = "Ödemeye Geç";
 			// 
 			// frmKoltukSecimi
 			// 
+			this.AcceptButton = this.btnOdemeyeGec;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 547);

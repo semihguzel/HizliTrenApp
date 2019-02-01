@@ -56,7 +56,7 @@
 			this.txtPnrNo.Location = new System.Drawing.Point(87, 85);
 			this.txtPnrNo.Name = "txtPnrNo";
 			this.txtPnrNo.Size = new System.Drawing.Size(124, 20);
-			this.txtPnrNo.TabIndex = 1;
+			this.txtPnrNo.TabIndex = 0;
 			// 
 			// metroLabel2
 			// 
@@ -108,7 +108,7 @@
 			this.btnİade.Location = new System.Drawing.Point(186, 435);
 			this.btnİade.Name = "btnİade";
 			this.btnİade.Size = new System.Drawing.Size(75, 23);
-			this.btnİade.TabIndex = 2;
+			this.btnİade.TabIndex = 3;
 			this.btnİade.Text = "İade";
 			// 
 			// btnAcikBilet
@@ -116,7 +116,7 @@
 			this.btnAcikBilet.Location = new System.Drawing.Point(306, 435);
 			this.btnAcikBilet.Name = "btnAcikBilet";
 			this.btnAcikBilet.Size = new System.Drawing.Size(164, 23);
-			this.btnAcikBilet.TabIndex = 2;
+			this.btnAcikBilet.TabIndex = 4;
 			this.btnAcikBilet.Text = "Açık Bilet Kuponuna Çevir";
 			// 
 			// btnDegistir
@@ -124,7 +124,7 @@
 			this.btnDegistir.Location = new System.Drawing.Point(515, 435);
 			this.btnDegistir.Name = "btnDegistir";
 			this.btnDegistir.Size = new System.Drawing.Size(75, 23);
-			this.btnDegistir.TabIndex = 2;
+			this.btnDegistir.TabIndex = 5;
 			this.btnDegistir.Text = "Değistir";
 			// 
 			// frmBiletlerim
