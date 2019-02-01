@@ -67,6 +67,18 @@
     <Compile Include="frmGiris.Designer.cs">
       <DependentUpon>frmGiris.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmIstasyonAyrinti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIstasyonAyrinti.Designer.cs">
+      <DependentUpon>frmIstasyonAyrinti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIstasyonTrenBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIstasyonTrenBilgileri.Designer.cs">
+      <DependentUpon>frmIstasyonTrenBilgileri.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKoltukSecimi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiris.resx">
       <DependentUpon>frmGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIstasyonAyrinti.resx">
+      <DependentUpon>frmIstasyonAyrinti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIstasyonTrenBilgileri.resx">
+      <DependentUpon>frmIstasyonTrenBilgileri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKoltukSecimi.resx">
       <DependentUpon>frmKoltukSecimi.cs</DependentUpon>

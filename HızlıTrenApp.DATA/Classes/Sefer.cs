@@ -10,6 +10,9 @@ namespace HızlıTrenApp.DATA
     {
         public int SeferID { get; set; }
         public string SeferYonu { get; set; }
+        public string TahminiVarisSüresi { get; set; }
+        public byte YolcuKapasitesi { get; set; }
+
 
         public virtual List<SeferSeferSaat> SeferinSaatleri { get; set; }
     }
