@@ -61,6 +61,12 @@
     <Compile Include="frmAnaSayfa.Designer.cs">
       <DependentUpon>frmAnaSayfa.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBiletlerim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBiletlerim.Designer.cs">
+      <DependentUpon>frmBiletlerim.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGiris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     <Compile Include="Tools.cs" />
     <EmbeddedResource Include="frmAnaSayfa.resx">
       <DependentUpon>frmAnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBiletlerim.resx">
+      <DependentUpon>frmBiletlerim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiris.resx">
       <DependentUpon>frmGiris.cs</DependentUpon>
