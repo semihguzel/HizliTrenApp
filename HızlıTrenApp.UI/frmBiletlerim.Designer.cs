@@ -105,7 +105,7 @@
 			// 
 			// btnİade
 			// 
-			this.btnİade.Location = new System.Drawing.Point(171, 435);
+			this.btnİade.Location = new System.Drawing.Point(186, 435);
 			this.btnİade.Name = "btnİade";
 			this.btnİade.Size = new System.Drawing.Size(75, 23);
 			this.btnİade.TabIndex = 2;
@@ -113,7 +113,7 @@
 			// 
 			// btnAcikBilet
 			// 
-			this.btnAcikBilet.Location = new System.Drawing.Point(333, 435);
+			this.btnAcikBilet.Location = new System.Drawing.Point(306, 435);
 			this.btnAcikBilet.Name = "btnAcikBilet";
 			this.btnAcikBilet.Size = new System.Drawing.Size(164, 23);
 			this.btnAcikBilet.TabIndex = 2;
@@ -121,11 +121,11 @@
 			// 
 			// btnDegistir
 			// 
-			this.btnDegistir.Location = new System.Drawing.Point(584, 435);
+			this.btnDegistir.Location = new System.Drawing.Point(515, 435);
 			this.btnDegistir.Name = "btnDegistir";
 			this.btnDegistir.Size = new System.Drawing.Size(75, 23);
 			this.btnDegistir.TabIndex = 2;
-			this.btnDegistir.Text = "Degistir";
+			this.btnDegistir.Text = "Değistir";
 			// 
 			// frmBiletlerim
 			// 
