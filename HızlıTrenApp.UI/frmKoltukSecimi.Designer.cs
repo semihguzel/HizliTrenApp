@@ -28,27 +28,31 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.flpKoltuklar = new System.Windows.Forms.FlowLayoutPanel();
-			this.SuspendLayout();
-			// 
-			// flpKoltuklar
-			// 
-			this.flpKoltuklar.Location = new System.Drawing.Point(42, 102);
-			this.flpKoltuklar.Name = "flpKoltuklar";
-			this.flpKoltuklar.Size = new System.Drawing.Size(717, 246);
-			this.flpKoltuklar.TabIndex = 1;
-			// 
-			// frmKoltukSecimi
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.flpKoltuklar);
-			this.Name = "frmKoltukSecimi";
-			this.Style = MetroFramework.MetroColorStyle.Red;
-			this.Text = "Koltuk Seçimi";
-			this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Right;
-			this.ResumeLayout(false);
+            this.flpKoltuklar = new System.Windows.Forms.FlowLayoutPanel();
+            this.SuspendLayout();
+            // 
+            // flpKoltuklar
+            // 
+            this.flpKoltuklar.Location = new System.Drawing.Point(63, 157);
+            this.flpKoltuklar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flpKoltuklar.Name = "flpKoltuklar";
+            this.flpKoltuklar.Size = new System.Drawing.Size(1076, 378);
+            this.flpKoltuklar.TabIndex = 1;
+            // 
+            // frmKoltukSecimi
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.flpKoltuklar);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "frmKoltukSecimi";
+            this.Padding = new System.Windows.Forms.Padding(30, 92, 30, 31);
+            this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.None;
+            this.Style = MetroFramework.MetroColorStyle.Red;
+            this.Text = "Koltuk Seçimi";
+            this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Right;
+            this.ResumeLayout(false);
 
 		}
 

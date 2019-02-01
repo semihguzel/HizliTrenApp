@@ -31,7 +31,7 @@ namespace HızlıTrenApp.UI
             mlIstasyonTren.Style = MetroColorStyle.Black;
         }
 
-        private void FormGetir(MetroForm gelenForm)
+        public void FormGetir(MetroForm gelenForm)
         {
             if (!kutuVarMi)
             {
@@ -96,7 +96,7 @@ namespace HızlıTrenApp.UI
         }
 
         bool istasyonMu = false;
-        private void FormKontrolluGetir(MetroForm gelenform)
+        public void FormKontrolluGetir(MetroForm gelenform)
         {
             Form kutuIciForm = null;
             foreach (Control item in grpAnaKutu.Controls)
@@ -115,7 +115,8 @@ namespace HızlıTrenApp.UI
             if (!istasyonMu)
             {
 
-                Tools.FormGetir(this, gelenform, grpAnaKutu, kutu, kutuVarMi, mlBilet);
+                //Tools.FormGetir(this, gelenform, grpAnaKutu, kutu, kutuVarMi, mlBilet);
+                FormGetir(gelenform);
                 mlBilet.Style = MetroColorStyle.Black;
                 mlIstasyonTren.Style = MetroColorStyle.Blue;
             }
@@ -123,12 +124,9 @@ namespace HızlıTrenApp.UI
 
         private void mlIstasyonTren_Click(object sender, EventArgs e)
         {
-            frmKoltukSecimi frmKoltuk = new frmKoltukSecimi();
-            FormKontrolluGetir(frmKoltuk);
+            frmIstasyonTrenBilgileri frmIstasyon = new frmIstasyonTrenBilgileri();
+            FormKontrolluGetir(frmIstasyon);
             //Tools.FormKontrolluGetir(this, frmKoltuk, grpAnaKutu, kutu, istasyonMu, mlBilet, mlIstasyonTren);
-
         }
-
-
     }
 }
