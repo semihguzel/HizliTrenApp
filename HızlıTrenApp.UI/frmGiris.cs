@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,13 +25,20 @@ namespace HızlıTrenApp.UI
 			cmbTip.SelectedIndex = 0;
 			rdbTekyon.Checked = true;
             dtpDonusTarihi.Enabled = false;
-
         }
         private void btnSeferleriListele_Click(object sender, EventArgs e)
 		{
 			frmSeferler frmSeferler = new frmSeferler(this);
             this.Hide();
+            GroupBox kutu = (GroupBox)this.Parent;
+            Form anaForm = (Form)kutu.Parent.Parent;
+            frmSeferler.Width = kutu.Width;
+            frmSeferler.Height = kutu.Height;
+            frmSeferler.MdiParent = anaForm;
+            kutu.Controls.Remove(this);
+            kutu.Controls.Add(frmSeferler);
             frmSeferler.Show();
+            frmSeferler.Location = Point.Empty;
         }
 
         private void rdbGidisDonus_CheckedChanged(object sender, EventArgs e)
