@@ -1,4 +1,5 @@
 ﻿using MetroFramework;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -114,7 +115,6 @@ namespace HızlıTrenApp.UI
             }
             if (!istasyonMu)
             {
-
                 //Tools.FormGetir(this, gelenform, grpAnaKutu, kutu, kutuVarMi, mlBilet);
                 FormGetir(gelenform);
                 mlBilet.Style = MetroColorStyle.Black;
@@ -127,6 +127,42 @@ namespace HızlıTrenApp.UI
             frmIstasyonTrenBilgileri frmIstasyon = new frmIstasyonTrenBilgileri();
             FormKontrolluGetir(frmIstasyon);
             //Tools.FormKontrolluGetir(this, frmKoltuk, grpAnaKutu, kutu, istasyonMu, mlBilet, mlIstasyonTren);
+        }
+
+        private void mlBiletlerim_Click(object sender, EventArgs e)
+        {
+            frmBiletlerim biletlerim = new frmBiletlerim();
+            AnaFormGetir(biletlerim);
+        }
+
+        private void AnaFormGetir(MetroForm gelenForm)
+        {
+            grpAnaKutu.Controls.Clear();
+            gelenForm.Width = grpAnaKutu.Width;
+            gelenForm.Height = grpAnaKutu.Height;
+            gelenForm.MdiParent = this;
+            grpAnaKutu.Controls.Add(gelenForm);
+            gelenForm.Show();
+            gelenForm.Location = Point.Empty;
+        }
+
+        private void mlRezervasyonlarim_Click(object sender, EventArgs e)
+        {
+            frmRezervasyonlarim rezervasyonlarim = new frmRezervasyonlarim();
+            AnaFormGetir(rezervasyonlarim);
+        }
+
+        private void AnaSayfaYenile(GroupBox groupBox)
+        {
+            frmGiris giris = new frmGiris();
+            grpAnaKutu.Controls.Clear();
+            FormGetir(giris);
+        }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+            AnaSayfaYenile(grpAnaKutu);
+
         }
     }
 }
