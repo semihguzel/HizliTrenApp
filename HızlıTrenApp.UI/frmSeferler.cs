@@ -39,5 +39,20 @@ namespace HızlıTrenApp.UI
             devam.Top = dgvListe.Bottom + 15;
             this.Controls.Add(devam);
         }
+
+        private void btnDevam_Click(object sender, EventArgs e)
+        {
+            frmKoltukSecimi gelenForm = new frmKoltukSecimi(this);
+            Hide();
+            GroupBox kutu = (GroupBox)this.Parent;
+            Form anaForm = (Form)kutu.Parent.Parent;
+            gelenForm.Width = kutu.Width;
+            gelenForm.Height = kutu.Height;
+            gelenForm.MdiParent = anaForm;
+            kutu.Controls.Remove(this);
+            kutu.Controls.Add(gelenForm);
+            gelenForm.Show();
+            gelenForm.Location = Point.Empty;
+        }
     }
 }

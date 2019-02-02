@@ -162,7 +162,6 @@ namespace HızlıTrenApp.UI
         private void pbLogo_Click(object sender, EventArgs e)
         {
             AnaSayfaYenile(grpAnaKutu);
-
         }
     }
 }
