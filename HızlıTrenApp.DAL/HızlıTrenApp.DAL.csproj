@@ -64,6 +64,8 @@
     <Compile Include="Repository\Abstract\IRepository.cs" />
     <Compile Include="Repository\Abstract\EFRepository.cs" />
     <Compile Include="Repository\Concrete\CalisanConcrete.cs" />
+    <Compile Include="Repository\Concrete\HataCozucu.cs" />
+    <Compile Include="Repository\Concrete\SeferlerSeferSaatleriDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

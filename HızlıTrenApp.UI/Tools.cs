@@ -84,5 +84,17 @@ namespace HızlıTrenApp.UI
             }
         }
 
+        public static bool Sorgula(GroupBox grp)
+        {
+            foreach (Control item in grp.Controls)
+            {
+
+                if (item is ComboBox)
+                {
+                    if (((ComboBox)item).SelectedIndex == -1) return false;
+                }
+            }
+            return true;
+        }
     }
 }

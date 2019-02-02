@@ -178,6 +178,15 @@
     <None Include="Resources\visa_PNG17.png" />
     <None Include="Resources\hizlitren.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HızlıTrenApp.DAL\HızlıTrenApp.DAL.csproj">
+      <Project>{9EFD49AF-A067-40C3-B48C-33E9FB8FD512}</Project>
+      <Name>HızlıTrenApp.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HızlıTrenApp.DATA\HızlıTrenApp.DATA.csproj">
+      <Project>{5efea947-7b58-4e72-a1f6-f6d8e7d55387}</Project>
+      <Name>HızlıTrenApp.DATA</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
