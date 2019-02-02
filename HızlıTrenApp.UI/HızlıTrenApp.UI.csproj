@@ -91,6 +91,12 @@
     <Compile Include="frmKoltukSecimi.Designer.cs">
       <DependentUpon>frmKoltukSecimi.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOdeme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOdeme.Designer.cs">
+      <DependentUpon>frmOdeme.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRezervasyonlarim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <EmbeddedResource Include="frmKoltukSecimi.resx">
       <DependentUpon>frmKoltukSecimi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOdeme.resx">
+      <DependentUpon>frmOdeme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRezervasyonlarim.resx">
       <DependentUpon>frmRezervasyonlarim.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +165,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\3Dsecure.png" />
+    <None Include="Resources\visa_PNG17.png" />
     <None Include="Resources\hizlitren.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace HızlıTrenApp.UI
 {
-	public partial class frmIstasyonAyrinti : MetroFramework.Forms.MetroForm
+	public partial class frmOdeme : MetroFramework.Forms.MetroForm
 	{
-		public frmIstasyonAyrinti()
+		public frmOdeme()
 		{
 			InitializeComponent();
-		}
-
-		private void frmIstasyonAyrinti_Load(object sender, EventArgs e)
-		{
-			
 		}
 	}
 }
