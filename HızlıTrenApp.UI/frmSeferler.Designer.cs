@@ -30,12 +30,17 @@
 		{
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.dgvListe = new System.Windows.Forms.DataGridView();
             this.btnIleri = new System.Windows.Forms.Button();
             this.btnGeri = new System.Windows.Forms.Button();
             this.btnDevam = new System.Windows.Forms.Button();
             this.btnAnasayfa = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListe)).BeginInit();
+            this.lstSeferler = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -55,14 +60,6 @@
             this.metroLabel2.Size = new System.Drawing.Size(113, 19);
             this.metroLabel2.TabIndex = 2;
             this.metroLabel2.Text = "Sonraki Gun Tarihi";
-            // 
-            // dgvListe
-            // 
-            this.dgvListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListe.Location = new System.Drawing.Point(20, 117);
-            this.dgvListe.Name = "dgvListe";
-            this.dgvListe.Size = new System.Drawing.Size(775, 610);
-            this.dgvListe.TabIndex = 4;
             // 
             // btnIleri
             // 
@@ -105,16 +102,64 @@
             this.btnAnasayfa.Text = "Ana Sayfa";
             this.btnAnasayfa.UseVisualStyleBackColor = true;
             // 
+            // lstSeferler
+            // 
+            this.lstSeferler.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.lstSeferler.FullRowSelect = true;
+            this.lstSeferler.GridLines = true;
+            this.lstSeferler.Location = new System.Drawing.Point(18, 118);
+            this.lstSeferler.Name = "lstSeferler";
+            this.lstSeferler.Size = new System.Drawing.Size(772, 371);
+            this.lstSeferler.TabIndex = 7;
+            this.lstSeferler.UseCompatibleStateImageBehavior = false;
+            this.lstSeferler.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Kalkış";
+            this.columnHeader1.Width = 97;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Varış";
+            this.columnHeader2.Width = 110;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Tahmini Varış Süresi";
+            this.columnHeader3.Width = 141;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Boş Koltuk Sayısı";
+            this.columnHeader4.Width = 132;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Sefer Tarihi";
+            this.columnHeader5.Width = 136;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Sefer Saati";
+            this.columnHeader6.Width = 144;
+            // 
             // frmSeferler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 789);
+            this.ClientSize = new System.Drawing.Size(813, 512);
+            this.Controls.Add(this.lstSeferler);
             this.Controls.Add(this.btnGeri);
             this.Controls.Add(this.btnAnasayfa);
             this.Controls.Add(this.btnDevam);
             this.Controls.Add(this.btnIleri);
-            this.Controls.Add(this.dgvListe);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Name = "frmSeferler";
@@ -123,7 +168,6 @@
             this.Text = "Seferler";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Right;
             this.Load += new System.EventHandler(this.frmSeferler_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,10 +176,16 @@
 		#endregion
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private System.Windows.Forms.DataGridView dgvListe;
         private System.Windows.Forms.Button btnIleri;
         private System.Windows.Forms.Button btnGeri;
         private System.Windows.Forms.Button btnDevam;
         private System.Windows.Forms.Button btnAnasayfa;
+        private System.Windows.Forms.ListView lstSeferler;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }

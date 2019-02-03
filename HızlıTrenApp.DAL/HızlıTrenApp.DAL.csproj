@@ -63,10 +63,12 @@
     <Compile Include="Mappings\UnvanMapping.cs" />
     <Compile Include="Repository\Abstract\IRepository.cs" />
     <Compile Include="Repository\Abstract\EFRepository.cs" />
+    <Compile Include="Repository\Concrete\BiletBilgiDal.cs" />
     <Compile Include="Repository\Concrete\CalisanConcrete.cs" />
     <Compile Include="Repository\Concrete\HataCozucu.cs" />
     <Compile Include="Repository\Concrete\SeferlerDal.cs" />
     <Compile Include="Repository\Concrete\SeferlerSeferSaatleriDal.cs" />
+    <Compile Include="Repository\Concrete\SeferSaatleriDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

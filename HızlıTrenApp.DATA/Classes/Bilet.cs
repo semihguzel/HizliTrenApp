@@ -9,7 +9,7 @@ namespace HızlıTrenApp.DATA
     public class Bilet
     {
         public int BiletID { get; set; }
-        public int BiletNo { get; set; }
+        public string PNRNo { get; set; }
 
         public virtual BiletBilgi BiletinBilgisi { get; set; }
         public virtual List<SatilanBilet> SatilanBiletler { get; set; }

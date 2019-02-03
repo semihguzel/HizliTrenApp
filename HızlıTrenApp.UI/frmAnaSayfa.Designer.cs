@@ -92,10 +92,8 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
-            this.pbLogo.Image = global::HızlıTrenApp.UI.Properties.Resources.logo;
             this.pbLogo.Location = new System.Drawing.Point(22, 8);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(85, 46);
             this.pbLogo.TabIndex = 7;
@@ -106,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 661);
+            this.ClientSize = new System.Drawing.Size(1055, 619);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.grpAnaKutu);
             this.Controls.Add(this.mlRezervasyonlarim);

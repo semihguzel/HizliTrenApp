@@ -29,17 +29,17 @@ namespace HızlıTrenApp.DAL.Repository.Concrete
         }
         //public List<SeferSeferSaat> DataGridSource(int id)
         //{
-        //    //using (Context db = new Context())
-        //    //{
-        //    //    return db.SeferSeferSaatleri.Where(x => x.SeferID == id).Select(x => new
-        //    //    {
+        //    using (Context db = new Context())
+        //    {
+        //        return db.SeferSeferSaatleri.Where(x => x.SeferID == id).Select(x => new
+        //        {
                    
-        //    //        x.SeferinSaati.SeferSaatBilgisi,
-        //    //        x.SaatinSeferi.SeferYonu,
-        //    //        x.SaatinSeferi.TahminiVarisSüresi,
-        //    //        x.SaatinSeferi.YolcuKapasitesi
-        //    //    }).ToList().;
-        //    //}
+        //            x.SeferinSaati.SeferSaatBilgisi,
+        //            x.SaatinSeferi.SeferYonu,
+        //            x.SaatinSeferi.TahminiVarisSüresi,
+        //            x.SaatinSeferi.YolcuKapasitesi
+        //        }).ToList();
+        //    }
         //}
     }
 }
