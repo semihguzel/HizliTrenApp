@@ -41,13 +41,13 @@ namespace HızlıTrenApp.UI
                 grpBusiness1.Controls.Add(lbl1);
                 if (i < 4)
                 {
-                    pb1.Location = new Point((i * 40) + 20, 10);
+                    pb1.Location = new Point((i * 60) + 13, 10);
                     lbl1.Location = new Point(pb1.Location.X, pb1.Height + 7);
                 }
-                //else
-                //{
-                //    pb1.Location = new Point(20, i * 10);
-                //}
+                else
+                {
+                    pb1.Location = new Point(lbl1.loca, lbl1.);
+                }
             }
         }
 
