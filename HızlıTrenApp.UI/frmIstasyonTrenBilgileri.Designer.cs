@@ -38,8 +38,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(82, 142);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel1.Location = new System.Drawing.Point(55, 92);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(54, 19);
             this.metroLabel1.TabIndex = 0;
@@ -48,8 +47,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(82, 255);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel2.Location = new System.Drawing.Point(55, 166);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(36, 19);
             this.metroLabel2.TabIndex = 0;
@@ -57,44 +55,48 @@
             // 
             // dtpTarih
             // 
-            this.dtpTarih.Location = new System.Drawing.Point(82, 289);
-            this.dtpTarih.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpTarih.Location = new System.Drawing.Point(55, 188);
             this.dtpTarih.Name = "dtpTarih";
-            this.dtpTarih.Size = new System.Drawing.Size(298, 26);
+            this.dtpTarih.Size = new System.Drawing.Size(200, 20);
             this.dtpTarih.TabIndex = 1;
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(82, 358);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.metroButton1.Location = new System.Drawing.Point(55, 233);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(300, 60);
+            this.metroButton1.Size = new System.Drawing.Size(200, 39);
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "İstasyon-Tren Bilgileri";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // cmbIstasyon
             // 
             this.cmbIstasyon.FormattingEnabled = true;
             this.cmbIstasyon.ItemHeight = 23;
-            this.cmbIstasyon.Location = new System.Drawing.Point(82, 175);
-            this.cmbIstasyon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbIstasyon.Items.AddRange(new object[] {
+            "İstanbul",
+            "Ankara",
+            "Adana",
+            "Eskişehir",
+            "Antalya",
+            "Bursa",
+            "İzmir"});
+            this.cmbIstasyon.Location = new System.Drawing.Point(55, 114);
             this.cmbIstasyon.Name = "cmbIstasyon";
-            this.cmbIstasyon.Size = new System.Drawing.Size(298, 29);
+            this.cmbIstasyon.Size = new System.Drawing.Size(200, 29);
             this.cmbIstasyon.TabIndex = 0;
             // 
             // frmIstasyonTrenBilgileri
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 454);
+            this.ClientSize = new System.Drawing.Size(341, 295);
             this.Controls.Add(this.cmbIstasyon);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.dtpTarih);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmIstasyonTrenBilgileri";
-            this.Padding = new System.Windows.Forms.Padding(30, 92, 30, 31);
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "İstasyon Tren Bilgileri";

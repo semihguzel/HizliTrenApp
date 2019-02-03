@@ -28,19 +28,15 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.dgvSeferler = new System.Windows.Forms.DataGridView();
             this.btnKalkis = new MetroFramework.Controls.MetroButton();
             this.btnVaris = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSeferler)).BeginInit();
+            this.lstİstasyonSeferleri = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // dgvSeferler
-            // 
-            this.dgvSeferler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSeferler.Location = new System.Drawing.Point(20, 60);
-            this.dgvSeferler.Name = "dgvSeferler";
-            this.dgvSeferler.Size = new System.Drawing.Size(760, 370);
-            this.dgvSeferler.TabIndex = 0;
             // 
             // btnKalkis
             // 
@@ -49,6 +45,7 @@
             this.btnKalkis.Size = new System.Drawing.Size(98, 43);
             this.btnKalkis.TabIndex = 1;
             this.btnKalkis.Text = "Kalkis";
+            this.btnKalkis.Click += new System.EventHandler(this.btnKalkis_Click);
             // 
             // btnVaris
             // 
@@ -57,30 +54,75 @@
             this.btnVaris.Size = new System.Drawing.Size(98, 43);
             this.btnVaris.TabIndex = 1;
             this.btnVaris.Text = "Varis";
+            this.btnVaris.Click += new System.EventHandler(this.btnVaris_Click);
+            // 
+            // lstİstasyonSeferleri
+            // 
+            this.lstİstasyonSeferleri.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lstİstasyonSeferleri.GridLines = true;
+            this.lstİstasyonSeferleri.Location = new System.Drawing.Point(24, 64);
+            this.lstİstasyonSeferleri.Name = "lstİstasyonSeferleri";
+            this.lstİstasyonSeferleri.Size = new System.Drawing.Size(753, 366);
+            this.lstİstasyonSeferleri.TabIndex = 2;
+            this.lstİstasyonSeferleri.UseCompatibleStateImageBehavior = false;
+            this.lstİstasyonSeferleri.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "İlk İstasyon";
+            this.columnHeader1.Width = 143;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Son İstasyon";
+            this.columnHeader2.Width = 145;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Kalkış Saati";
+            this.columnHeader3.Width = 148;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Tahmini Varış Süresi";
+            this.columnHeader4.Width = 167;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Sefer Tarihi";
+            this.columnHeader5.Width = 144;
             // 
             // frmIstasyonAyrinti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 490);
+            this.Controls.Add(this.lstİstasyonSeferleri);
             this.Controls.Add(this.btnVaris);
             this.Controls.Add(this.btnKalkis);
-            this.Controls.Add(this.dgvSeferler);
             this.Name = "frmIstasyonAyrinti";
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "İstasyondaki Seferler";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Right;
             this.Load += new System.EventHandler(this.frmIstasyonAyrinti_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSeferler)).EndInit();
             this.ResumeLayout(false);
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.DataGridView dgvSeferler;
         private MetroFramework.Controls.MetroButton btnKalkis;
         private MetroFramework.Controls.MetroButton btnVaris;
+        private System.Windows.Forms.ListView lstİstasyonSeferleri;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

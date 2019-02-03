@@ -16,5 +16,29 @@ namespace HızlıTrenApp.UI
 		{
 			InitializeComponent();
 		}
-	}
+        public string istasyon;
+        public DateTime tarih;
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            if (cmbIstasyon.SelectedIndex!=-1)
+            {
+                if (dtpTarih.Value.Date>=DateTime.Now.Date)
+                {
+                    istasyon = cmbIstasyon.SelectedItem.ToString();
+                    tarih = dtpTarih.Value;
+                    frmIstasyonAyrinti frmIstasyonAyrinti = new frmIstasyonAyrinti(this);
+                    Hide();
+                    frmIstasyonAyrinti.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Önceki tarihlerin istasyon bilgileri bulunmamaktadır.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen bir istasyon seçiniz.");
+            }
+        }
+    }
 }
