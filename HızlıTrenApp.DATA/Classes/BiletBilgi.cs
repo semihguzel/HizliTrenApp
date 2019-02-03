@@ -13,6 +13,9 @@ namespace HızlıTrenApp.DATA
         public string BiletTipi { get; set; }
         public byte KoltukNo { get; set; }
         public decimal BiletFiyati { get; set; }
+        public DateTime BiletTarihi { get; set; }
+        public string SeferSaati { get; set; }
+
 
         public virtual Bilet BilgininBileti { get; set; }
 

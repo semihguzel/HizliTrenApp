@@ -22,39 +22,126 @@ namespace HızlıTrenApp.UI
             gelenForm = frm;
             _seferlerDal = new SeferlerDal();
             _seferlerSeferSaatleriDal = new SeferlerSeferSaatleriDal();
+            _seferSaatleriDal = new SeferSaatleriDal();
+            _biletBilgiDal = new BiletBilgiDal();
         }
+
         private SeferlerDal _seferlerDal;
         private SeferlerSeferSaatleriDal _seferlerSeferSaatleriDal;
+        private SeferSaatleriDal _seferSaatleriDal;
+        private BiletBilgiDal _biletBilgiDal;
+        List<SeferSeferSaat> gdsSeferSeferSaatleri;
+        List<SeferSeferSaat> dnsSeferSeferSaatleri;
+        Sefer gdsSefer;
+        List<SeferSaat> seferSaatleri;
+        Sefer dnsSefer;
+
         private void frmSeferler_Load(object sender, EventArgs e)
         {
+            dnsSefer = new Sefer();
+            dnsSefer = _seferlerDal.GetSeferIDByFilter(gelenForm.nereye, gelenForm.nereden);
+            gdsSefer = new Sefer();
+            gdsSefer = _seferlerDal.GetSeferIDByFilter(gelenForm.nereden, gelenForm.nereye);
+            int id1 = gdsSefer.SeferID;
+            int id2 = dnsSefer.SeferID;
 
-            dgvListe.ColumnCount = 5;
-            dgvListe.Columns[0].Name = "Bilgi";
-            dgvListe.Columns[1].Name = "Kalkış";
-            dgvListe.Columns[2].Name = "Varış";
-            dgvListe.Columns[3].Name = "Kalan Koltuk";
-            dgvListe.Columns[4].Name = "Fiyat";
-            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-            chk.HeaderText = "Seçim";
-            chk.Name = "CheckBox";
-            dgvListe.Columns.Add(chk);
+            seferSaatleri = new List<SeferSaat>();
+            seferSaatleri = _seferSaatleriDal.GetAll();
 
-            Sefer sefer = new Sefer();
-            sefer = _seferlerDal.GetSeferIDByFilter(gelenForm.nereden, gelenForm.nereye);
-            int id = sefer.SeferID;
-            
-            List<SeferSeferSaat> seferSeferSaatleri = new List<SeferSeferSaat>();
-            seferSeferSaatleri = _seferlerSeferSaatleriDal.GetBySeferID(id);
-            foreach (var item in seferSeferSaatleri)
+            gdsSeferSeferSaatleri = new List<SeferSeferSaat>();
+            gdsSeferSeferSaatleri = _seferlerSeferSaatleriDal.GetBySeferID(id1);
+
+            dnsSeferSeferSaatleri = new List<SeferSeferSaat>();
+            dnsSeferSeferSaatleri = _seferlerSeferSaatleriDal.GetBySeferID(id2);
+
+            SeferleriDoldur();
+        }
+
+
+        private void SeferleriDoldur()
+        {
+            lstSeferler.Items.Clear();
+            List<BiletBilgi> biletler = new List<BiletBilgi>();
+            biletler = _biletBilgiDal.GetByDate(gelenForm.gidisTarihi.Date);
+            int[] biletSaat = new int[] { 0, 0, 0, 0, 0 };
+            foreach (var item in biletler)
             {
-                List<string> veriTopla = new List<string>();
+                if (item.SeferSaati == "09:00")
+                {
+                    biletSaat[0]++;
+                }
+                else if (item.SeferSaati == "12:00")
+                {
+                    biletSaat[1]++;
+                }
+                else if (item.SeferSaati == "15:00")
+                {
+                    biletSaat[2]++;
+                }
+                else if (item.SeferSaati == "18:00")
+                {
+                    biletSaat[3]++;
+                }
+                else if (item.SeferSaati == "21:00")
+                {
+                    biletSaat[4]++;
+                }
+            }
+            int sayac = 0;
+            foreach (SeferSaat item in seferSaatleri)
+            {
+                ListViewItem lstItem = new ListViewItem(gelenForm.nereden);
+                lstItem.SubItems.Add(gelenForm.nereye);
+                lstItem.SubItems.Add(gdsSefer.TahminiVarisSüresi);
+                lstItem.SubItems.Add((gdsSefer.YolcuKapasitesi - biletSaat[sayac]).ToString());
+                lstItem.SubItems.Add(gelenForm.gidisTarihi.ToShortDateString());
+                lstItem.SubItems.Add(item.SeferSaatBilgisi);
+                lstSeferler.Items.Add(lstItem);
+                sayac++;
             }
 
-            MetroButton devam = new MetroButton();
-            devam.Width = 40;
-            devam.Height = 20;
-            devam.Top = dgvListe.Bottom + 15;
-            this.Controls.Add(devam);
+            if (gelenForm.donusTarihi >= gelenForm.gidisTarihi)
+            {
+
+                List<BiletBilgi> biletler2 = new List<BiletBilgi>();
+                biletler2 = _biletBilgiDal.GetByDate(gelenForm.donusTarihi.Date);
+                int[] biletSaat2 = new int[] { 0, 0, 0, 0, 0 };
+                foreach (var item in biletler2)
+                {
+                    if (item.SeferSaati == "09:00")
+                    {
+                        biletSaat2[0]++;
+                    }
+                    else if (item.SeferSaati == "12:00")
+                    {
+                        biletSaat2[1]++;
+                    }
+                    else if (item.SeferSaati == "15:00")
+                    {
+                        biletSaat2[2]++;
+                    }
+                    else if (item.SeferSaati == "18:00")
+                    {
+                        biletSaat2[3]++;
+                    }
+                    else if (item.SeferSaati == "21:00")
+                    {
+                        biletSaat2[4]++;
+                    }
+                }
+                int sayac1 = 0;
+                foreach (SeferSaat item in seferSaatleri)
+                {
+                    ListViewItem lstItem = new ListViewItem(gelenForm.nereye);
+                    lstItem.SubItems.Add(gelenForm.nereden);
+                    lstItem.SubItems.Add(dnsSefer.TahminiVarisSüresi);
+                    lstItem.SubItems.Add((dnsSefer.YolcuKapasitesi - biletSaat2[sayac1]).ToString());
+                    lstItem.SubItems.Add(gelenForm.donusTarihi.ToShortDateString());
+                    lstItem.SubItems.Add(item.SeferSaatBilgisi);
+                    lstSeferler.Items.Add(lstItem);
+                    sayac1++;
+                }
+            }
         }
 
         private void btnDevam_Click(object sender, EventArgs e)

@@ -85,7 +85,7 @@ namespace HızlıTrenApp.UI
                         if (dtpDonusTarihi.Enabled != true)
                         {
                             ToplananVerileriDoldur();
-
+                            
                             frmSeferler frmSeferler = new frmSeferler(this);
                             Hide();
                             GroupBox kutu = (GroupBox)this.Parent;
@@ -101,7 +101,7 @@ namespace HızlıTrenApp.UI
                         else if (dtpDonusTarihi.Enabled == true && dtpDonusTarihi.Value > dtpGidisTarihi.Value)
                         {
                             ToplananVerileriDoldur();
-
+                            donusTarihi = dtpDonusTarihi.Value;
                             frmSeferler frmSeferler = new frmSeferler(this);
                             Hide();
                             GroupBox kutu = (GroupBox)this.Parent;
