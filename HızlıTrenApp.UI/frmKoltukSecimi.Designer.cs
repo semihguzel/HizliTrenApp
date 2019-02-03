@@ -48,22 +48,30 @@
             this.txtAd = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.grpKoltuklar = new System.Windows.Forms.GroupBox();
-            this.flpEconomy2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flpEconomy1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.grpEconomy1 = new System.Windows.Forms.GroupBox();
+            this.grpEconomy2 = new System.Windows.Forms.GroupBox();
+            this.grpBusiness2 = new System.Windows.Forms.GroupBox();
+            this.grpBusiness1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbWc2 = new System.Windows.Forms.PictureBox();
             this.pbWc = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.flpBusiness2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.grpBusiness1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.grpYolcuBilgileri.SuspendLayout();
             this.grpKoltuklar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // grpYolcuBilgileri
@@ -87,10 +95,10 @@
             this.grpYolcuBilgileri.Controls.Add(this.txtAd);
             this.grpYolcuBilgileri.Controls.Add(this.metroLabel1);
             this.grpYolcuBilgileri.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.grpYolcuBilgileri.Location = new System.Drawing.Point(38, 326);
+            this.grpYolcuBilgileri.Location = new System.Drawing.Point(27, 524);
             this.grpYolcuBilgileri.Name = "grpYolcuBilgileri";
             this.grpYolcuBilgileri.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.grpYolcuBilgileri.Size = new System.Drawing.Size(717, 198);
+            this.grpYolcuBilgileri.Size = new System.Drawing.Size(728, 198);
             this.grpYolcuBilgileri.TabIndex = 2;
             this.grpYolcuBilgileri.TabStop = false;
             this.grpYolcuBilgileri.Text = "Yolcu Bilgileri";
@@ -252,90 +260,70 @@
             // 
             // grpKoltuklar
             // 
+            this.grpKoltuklar.Controls.Add(this.grpEconomy1);
+            this.grpKoltuklar.Controls.Add(this.grpEconomy2);
+            this.grpKoltuklar.Controls.Add(this.grpBusiness2);
             this.grpKoltuklar.Controls.Add(this.grpBusiness1);
-            this.grpKoltuklar.Controls.Add(this.flpEconomy2);
-            this.grpKoltuklar.Controls.Add(this.flpEconomy1);
+            this.grpKoltuklar.Controls.Add(this.pictureBox5);
+            this.grpKoltuklar.Controls.Add(this.pictureBox3);
+            this.grpKoltuklar.Controls.Add(this.pictureBox4);
+            this.grpKoltuklar.Controls.Add(this.pictureBox6);
             this.grpKoltuklar.Controls.Add(this.pictureBox2);
             this.grpKoltuklar.Controls.Add(this.pictureBox1);
             this.grpKoltuklar.Controls.Add(this.pbWc2);
             this.grpKoltuklar.Controls.Add(this.pbWc);
             this.grpKoltuklar.Controls.Add(this.label1);
             this.grpKoltuklar.Controls.Add(this.label2);
-            this.grpKoltuklar.Controls.Add(this.flpBusiness2);
             this.grpKoltuklar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.grpKoltuklar.Location = new System.Drawing.Point(38, 55);
-            this.grpKoltuklar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpKoltuklar.Location = new System.Drawing.Point(38, 50);
+            this.grpKoltuklar.Margin = new System.Windows.Forms.Padding(2);
             this.grpKoltuklar.Name = "grpKoltuklar";
-            this.grpKoltuklar.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpKoltuklar.Size = new System.Drawing.Size(717, 266);
+            this.grpKoltuklar.Padding = new System.Windows.Forms.Padding(2);
+            this.grpKoltuklar.Size = new System.Drawing.Size(717, 469);
             this.grpKoltuklar.TabIndex = 3;
             this.grpKoltuklar.TabStop = false;
             this.grpKoltuklar.Text = "Koltuk Secimi";
             // 
-            // flpEconomy2
+            // grpEconomy1
             // 
-            this.flpEconomy2.Location = new System.Drawing.Point(432, 178);
-            this.flpEconomy2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.flpEconomy2.Name = "flpEconomy2";
-            this.flpEconomy2.Size = new System.Drawing.Size(281, 82);
-            this.flpEconomy2.TabIndex = 3;
+            this.grpEconomy1.Location = new System.Drawing.Point(434, 21);
+            this.grpEconomy1.Name = "grpEconomy1";
+            this.grpEconomy1.Size = new System.Drawing.Size(269, 197);
+            this.grpEconomy1.TabIndex = 4;
+            this.grpEconomy1.TabStop = false;
             // 
-            // flpEconomy1
+            // grpEconomy2
             // 
-            this.flpEconomy1.Location = new System.Drawing.Point(432, 32);
-            this.flpEconomy1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.flpEconomy1.Name = "flpEconomy1";
-            this.flpEconomy1.Size = new System.Drawing.Size(281, 82);
-            this.flpEconomy1.TabIndex = 3;
+            this.grpEconomy2.Location = new System.Drawing.Point(434, 267);
+            this.grpEconomy2.Name = "grpEconomy2";
+            this.grpEconomy2.Size = new System.Drawing.Size(269, 197);
+            this.grpEconomy2.TabIndex = 4;
+            this.grpEconomy2.TabStop = false;
             // 
-            // pictureBox2
+            // grpBusiness2
             // 
-            this.pictureBox2.Image = global::HızlıTrenApp.UI.Properties.Resources.canteen;
-            this.pictureBox2.Location = new System.Drawing.Point(270, 32);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(68, 82);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.grpBusiness2.Location = new System.Drawing.Point(16, 267);
+            this.grpBusiness2.Name = "grpBusiness2";
+            this.grpBusiness2.Size = new System.Drawing.Size(269, 197);
+            this.grpBusiness2.TabIndex = 4;
+            this.grpBusiness2.TabStop = false;
             // 
-            // pictureBox1
+            // grpBusiness1
             // 
-            this.pictureBox1.Image = global::HızlıTrenApp.UI.Properties.Resources.canteen;
-            this.pictureBox1.Location = new System.Drawing.Point(270, 178);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 82);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pbWc2
-            // 
-            this.pbWc2.Image = global::HızlıTrenApp.UI.Properties.Resources.wc;
-            this.pbWc2.Location = new System.Drawing.Point(350, 178);
-            this.pbWc2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pbWc2.Name = "pbWc2";
-            this.pbWc2.Size = new System.Drawing.Size(68, 82);
-            this.pbWc2.TabIndex = 2;
-            this.pbWc2.TabStop = false;
-            // 
-            // pbWc
-            // 
-            this.pbWc.Image = global::HızlıTrenApp.UI.Properties.Resources.wc;
-            this.pbWc.Location = new System.Drawing.Point(350, 32);
-            this.pbWc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pbWc.Name = "pbWc";
-            this.pbWc.Size = new System.Drawing.Size(68, 82);
-            this.pbWc.TabIndex = 2;
-            this.pbWc.TabStop = false;
+            this.grpBusiness1.Location = new System.Drawing.Point(16, 21);
+            this.grpBusiness1.Name = "grpBusiness1";
+            this.grpBusiness1.Size = new System.Drawing.Size(269, 197);
+            this.grpBusiness1.TabIndex = 4;
+            this.grpBusiness1.TabStop = false;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.DimGray;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(432, 123);
+            this.label1.Location = new System.Drawing.Point(431, 231);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(281, 46);
+            this.label1.Size = new System.Drawing.Size(272, 33);
             this.label1.TabIndex = 1;
             this.label1.Text = "ECONOMY";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -344,36 +332,108 @@
             // 
             this.label2.BackColor = System.Drawing.Color.DimGray;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 123);
+            this.label2.Location = new System.Drawing.Point(16, 231);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(251, 46);
+            this.label2.Size = new System.Drawing.Size(269, 33);
             this.label2.TabIndex = 1;
             this.label2.Text = "BUSINESS";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // flpBusiness2
+            // pictureBox5
             // 
-            this.flpBusiness2.Location = new System.Drawing.Point(8, 178);
-            this.flpBusiness2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.flpBusiness2.Name = "flpBusiness2";
-            this.flpBusiness2.Size = new System.Drawing.Size(251, 82);
-            this.flpBusiness2.TabIndex = 0;
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::HızlıTrenApp.UI.Properties.Resources.kapi;
+            this.pictureBox5.Location = new System.Drawing.Point(336, 330);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(48, 61);
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
             // 
-            // grpBusiness1
+            // pictureBox4
             // 
-            this.grpBusiness1.Location = new System.Drawing.Point(8, 21);
-            this.grpBusiness1.Name = "grpBusiness1";
-            this.grpBusiness1.Size = new System.Drawing.Size(253, 93);
-            this.grpBusiness1.TabIndex = 4;
-            this.grpBusiness1.TabStop = false;
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = global::HızlıTrenApp.UI.Properties.Resources.kapi;
+            this.pictureBox4.Location = new System.Drawing.Point(336, 252);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(48, 61);
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::HızlıTrenApp.UI.Properties.Resources.canteen;
+            this.pictureBox2.Location = new System.Drawing.Point(293, 31);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(46, 69);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::HızlıTrenApp.UI.Properties.Resources.canteen;
+            this.pictureBox1.Location = new System.Drawing.Point(383, 31);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 69);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbWc2
+            // 
+            this.pbWc2.BackColor = System.Drawing.Color.Transparent;
+            this.pbWc2.Image = global::HızlıTrenApp.UI.Properties.Resources.wc;
+            this.pbWc2.Location = new System.Drawing.Point(380, 395);
+            this.pbWc2.Margin = new System.Windows.Forms.Padding(2);
+            this.pbWc2.Name = "pbWc2";
+            this.pbWc2.Size = new System.Drawing.Size(46, 69);
+            this.pbWc2.TabIndex = 2;
+            this.pbWc2.TabStop = false;
+            // 
+            // pbWc
+            // 
+            this.pbWc.BackColor = System.Drawing.Color.Transparent;
+            this.pbWc.Image = global::HızlıTrenApp.UI.Properties.Resources.wc;
+            this.pbWc.Location = new System.Drawing.Point(290, 395);
+            this.pbWc.Margin = new System.Windows.Forms.Padding(2);
+            this.pbWc.Name = "pbWc";
+            this.pbWc.Size = new System.Drawing.Size(46, 69);
+            this.pbWc.TabIndex = 2;
+            this.pbWc.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::HızlıTrenApp.UI.Properties.Resources.kapi;
+            this.pictureBox6.Location = new System.Drawing.Point(336, 104);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(48, 61);
+            this.pictureBox6.TabIndex = 2;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::HızlıTrenApp.UI.Properties.Resources.kapi;
+            this.pictureBox3.Location = new System.Drawing.Point(336, 187);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(48, 61);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
             // 
             // frmKoltukSecimi
             // 
             this.AcceptButton = this.btnOdemeyeGec;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 547);
+            this.ClientSize = new System.Drawing.Size(800, 748);
             this.Controls.Add(this.grpKoltuklar);
             this.Controls.Add(this.grpYolcuBilgileri);
             this.Name = "frmKoltukSecimi";
@@ -385,10 +445,14 @@
             this.grpYolcuBilgileri.ResumeLayout(false);
             this.grpYolcuBilgileri.PerformLayout();
             this.grpKoltuklar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWc2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -414,15 +478,19 @@
 		private MetroFramework.Controls.MetroLabel metroLabel7;
 		private MetroFramework.Controls.MetroButton btnOdemeyeGec;
         private System.Windows.Forms.GroupBox grpKoltuklar;
-        private System.Windows.Forms.FlowLayoutPanel flpBusiness2;
         private System.Windows.Forms.PictureBox pbWc;
         private System.Windows.Forms.PictureBox pbWc2;
-        private System.Windows.Forms.FlowLayoutPanel flpEconomy1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.FlowLayoutPanel flpEconomy2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox grpBusiness1;
+        private System.Windows.Forms.GroupBox grpBusiness2;
+        private System.Windows.Forms.GroupBox grpEconomy1;
+        private System.Windows.Forms.GroupBox grpEconomy2;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

@@ -165,7 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\canteen.png" />
+    <None Include="Images\kapi.png" />
     <Content Include="Images\seat_available.png" />
+    <Content Include="Images\seat_available_resized_economy.png" />
     <Content Include="Images\seat_man.png" />
     <Content Include="Images\seat_reserved.png" />
     <Content Include="Images\seat_woman.png" />
