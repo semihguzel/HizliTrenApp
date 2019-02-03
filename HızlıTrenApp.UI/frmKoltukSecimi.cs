@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HızlıTrenApp.DAL.Repository.Concrete;
+using HızlıTrenApp.DATA;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +20,11 @@ namespace HızlıTrenApp.UI
             InitializeComponent();
             gelenForm = form;
         }
-
+        List<BiletBilgi> biletListesi;
         private void frmKoltukSecimi_Load(object sender, EventArgs e)
         {
+            BiletBilgiDal biletBilgiDal = new BiletBilgiDal();
+            biletListesi = biletBilgiDal.TicketList();
             KoltuklariOlustur();
         }
 
@@ -39,16 +43,16 @@ namespace HızlıTrenApp.UI
             int businessSoldanBosluk = 60;
             int businessKoltukArasi = 20;
             int businessUsttenBosluk = 20;
-
+            int businessKoltukSayisi = 8;
             for (int i = 0; i < 8; i++)
             {
                 //grpBusiness1
                 pbB1 = new PictureBox();
                 lblB1 = new Label();
                 lblB1Masa = new Label();
-                BusinessKoltuk(pbB1, lblB1);
                 pbB1.Name = "B" + i;
                 lblB1.Text = pbB1.Name;
+                BusinessKoltuk(pbB1, lblB1);
 
                 lblB1Masa.AutoSize = false;
                 lblB1Masa.TextAlign = ContentAlignment.MiddleCenter;
@@ -65,9 +69,10 @@ namespace HızlıTrenApp.UI
                 pbB2 = new PictureBox();
                 lblB2 = new Label();
                 lblB2Masa = new Label();
-                BusinessKoltuk(pbB2, lblB2);
-                pbB2.Name = "B" + i;
+                pbB2.Name = "B" + businessKoltukSayisi;
                 lblB2.Text = pbB2.Name;
+                businessKoltukSayisi++;
+                BusinessKoltuk(pbB2, lblB2);
 
                 lblB2Masa.AutoSize = false;
                 lblB2Masa.TextAlign = ContentAlignment.MiddleCenter;
@@ -85,7 +90,7 @@ namespace HızlıTrenApp.UI
                     //grpBusiness1'de ust 4 koltuk
                     pbB1.Location = new Point((i * businessSoldanBosluk) + businessKoltukArasi, businessUsttenBosluk);
                     lblB1.Location = new Point(pbB1.Location.X, pbB1.Height + businessUsttenBosluk);
-                    
+
 
                     //grpBusiness2'de ust 4 koltuk
                     pbB2.Location = new Point((i * businessSoldanBosluk) + businessKoltukArasi, businessUsttenBosluk);
@@ -101,8 +106,8 @@ namespace HızlıTrenApp.UI
                     pbB2.Location = new Point(((i - 4) * businessSoldanBosluk) + businessKoltukArasi, lblB2.Height + pbB2.Height + (businessUsttenBosluk * 4));
                     lblB2.Location = new Point(pbB2.Location.X, pbB2.Location.Y + (businessUsttenBosluk * 2));
                 }
-                lblB1Masa.Location = new Point(0,80);
-                lblB2Masa.Location = new Point(0,80);
+                lblB1Masa.Location = new Point(0, 80);
+                lblB2Masa.Location = new Point(0, 80);
             }
             //Economy pb ve lbl
             PictureBox pbE1;
@@ -115,23 +120,25 @@ namespace HızlıTrenApp.UI
             int economyKoltukArasi = 20;
             int economyUsttenBosluk = 20;
             int economyLabelBosluk = 15;
+            int economyKoltukSayisi = 12;
             for (int i = 0; i < 12; i++)
             {
                 //grpEconomy1
                 pbE1 = new PictureBox();
                 lblE1 = new Label();
-                EconomyKoltuk(pbE1, lblE1);
                 pbE1.Name = "E" + i;
                 lblE1.Text = pbE1.Name;
+                EconomyKoltuk(pbE1, lblE1);
                 grpEconomy1.Controls.Add(pbE1);
                 grpEconomy1.Controls.Add(lblE1);
 
                 //grpEconomy2
                 pbE2 = new PictureBox();
                 lblE2 = new Label();
-                EconomyKoltuk(pbE2, lblE2);
-                pbE2.Name = "E" + i;
+                pbE2.Name = "E" + economyKoltukSayisi;
                 lblE2.Text = pbE2.Name;
+                economyKoltukSayisi++;
+                EconomyKoltuk(pbE2, lblE2);
                 grpEconomy2.Controls.Add(pbE2);
                 grpEconomy2.Controls.Add(lblE2);
 
@@ -172,23 +179,36 @@ namespace HızlıTrenApp.UI
         {
             pb.Width = 40;
             pb.Height = 30;
-            //pb.BackColor = Color.Crimson;
-            pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_available_resized_economy.png");
-
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.Width = pb.Width;
             lbl.Height = 20;
+            foreach (var item in biletListesi)
+            {
+                if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet && pb.Name.Contains("E"))
+                    pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_woman_resized_economy.png");
+                else if (item.KoltukNo.Contains(pb.Name) && !item.MusterininBileti.Cinsiyet && pb.Name.Contains("E"))
+                    pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_woman_resized_economy.png");
+                else
+                    pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_available_resized_economy.png");
+            }
         }
 
         private void BusinessKoltuk(PictureBox pb, Label lbl)
         {
             pb.Width = 50;
             pb.Height = 40;
-            //pb.BackColor = Color.Crimson;
-            pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_available_resized_business.png");
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.Width = pb.Width;
             lbl.Height = 15;
+            foreach (var item in biletListesi)
+            {
+                if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet == true && pb.Name.Contains("B"))
+                    pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_man_resized_business.png");
+                else if (item.KoltukNo.Contains(pb.Name) && item.MusterininBileti.Cinsiyet == false && pb.Name.Contains("B"))
+                    pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_woman_resized_business.png");
+                else
+                    pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_available_resized_business.png");
+            }
         }
     }
 }
