@@ -41,8 +41,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(128, 134);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel1.Location = new System.Drawing.Point(85, 87);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(110, 19);
             this.metroLabel1.TabIndex = 2;
@@ -51,8 +50,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(973, 134);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel2.Location = new System.Drawing.Point(611, 87);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(113, 19);
             this.metroLabel2.TabIndex = 2;
@@ -61,35 +59,37 @@
             // dgvListe
             // 
             this.dgvListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListe.Location = new System.Drawing.Point(30, 180);
-            this.dgvListe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvListe.Location = new System.Drawing.Point(20, 117);
             this.dgvListe.Name = "dgvListe";
-            this.dgvListe.Size = new System.Drawing.Size(1162, 938);
+            this.dgvListe.Size = new System.Drawing.Size(775, 610);
             this.dgvListe.TabIndex = 4;
             // 
             // btnIleri
             // 
-            this.btnIleri.Location = new System.Drawing.Point(1093, 111);
+            this.btnIleri.Location = new System.Drawing.Point(729, 72);
+            this.btnIleri.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIleri.Name = "btnIleri";
-            this.btnIleri.Size = new System.Drawing.Size(94, 61);
+            this.btnIleri.Size = new System.Drawing.Size(63, 40);
             this.btnIleri.TabIndex = 6;
             this.btnIleri.Text = ">";
             this.btnIleri.UseVisualStyleBackColor = true;
             // 
             // btnGeri
             // 
-            this.btnGeri.Location = new System.Drawing.Point(27, 111);
+            this.btnGeri.Location = new System.Drawing.Point(18, 72);
+            this.btnGeri.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGeri.Name = "btnGeri";
-            this.btnGeri.Size = new System.Drawing.Size(94, 61);
+            this.btnGeri.Size = new System.Drawing.Size(63, 40);
             this.btnGeri.TabIndex = 6;
             this.btnGeri.Text = "<";
             this.btnGeri.UseVisualStyleBackColor = true;
             // 
             // btnDevam
             // 
-            this.btnDevam.Location = new System.Drawing.Point(1093, 1126);
+            this.btnDevam.Location = new System.Drawing.Point(729, 732);
+            this.btnDevam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDevam.Name = "btnDevam";
-            this.btnDevam.Size = new System.Drawing.Size(94, 61);
+            this.btnDevam.Size = new System.Drawing.Size(63, 40);
             this.btnDevam.TabIndex = 6;
             this.btnDevam.Text = "Devam";
             this.btnDevam.UseVisualStyleBackColor = true;
@@ -97,18 +97,19 @@
             // 
             // btnAnasayfa
             // 
-            this.btnAnasayfa.Location = new System.Drawing.Point(27, 1126);
+            this.btnAnasayfa.Location = new System.Drawing.Point(18, 732);
+            this.btnAnasayfa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAnasayfa.Name = "btnAnasayfa";
-            this.btnAnasayfa.Size = new System.Drawing.Size(94, 61);
+            this.btnAnasayfa.Size = new System.Drawing.Size(63, 40);
             this.btnAnasayfa.TabIndex = 6;
             this.btnAnasayfa.Text = "Ana Sayfa";
             this.btnAnasayfa.UseVisualStyleBackColor = true;
             // 
             // frmSeferler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 1214);
+            this.ClientSize = new System.Drawing.Size(813, 789);
             this.Controls.Add(this.btnGeri);
             this.Controls.Add(this.btnAnasayfa);
             this.Controls.Add(this.btnDevam);
@@ -116,9 +117,7 @@
             this.Controls.Add(this.dgvListe);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmSeferler";
-            this.Padding = new System.Windows.Forms.Padding(30, 92, 30, 31);
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Seferler";
