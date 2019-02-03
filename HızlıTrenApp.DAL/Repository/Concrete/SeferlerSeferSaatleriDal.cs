@@ -11,18 +11,35 @@ namespace HızlıTrenApp.DAL.Repository.Concrete
 {
     public class SeferlerSeferSaatleriDal
     {
-        private IRepository<Sefer> _seferRepository;
+        private IRepository<SeferSeferSaat> _seferSeferSaatRepository;
         private DbContext _dbContext;
 
         public SeferlerSeferSaatleriDal()
         {
             _dbContext = new Context();
-            _seferRepository = new EFRepository<Sefer>(_dbContext);
+            _seferSeferSaatRepository = new EFRepository<SeferSeferSaat>(_dbContext);
         }
-      
-        public List<Sefer> GetAllSeferler()
+
+        public List<SeferSeferSaat> GetBySeferID(int id)
         {
-            return _seferRepository.GetAll().ToList();
+            using (Context db = new Context())
+            {
+                return db.SeferSeferSaatleri.Where(x => x.SeferID == id).ToList();
+            }
+        }
+        public List<SeferSeferSaat> DataGridSource(int id)
+        {
+            using (Context db = new Context())
+            {
+                return db.SeferSeferSaatleri.Where(x => x.SeferID == id).Select(x => new
+                {
+                   
+                    x.SeferinSaati.SeferSaatBilgisi,
+                    x.SaatinSeferi.SeferYonu,
+                    x.SaatinSeferi.TahminiVarisSüresi,
+                    x.SaatinSeferi.YolcuKapasitesi
+                }).ToList().;
+            }
         }
     }
 }

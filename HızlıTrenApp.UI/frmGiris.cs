@@ -18,11 +18,11 @@ namespace HızlıTrenApp.UI
         public frmGiris()
         {
             InitializeComponent();
-            _seferlerSeferSaatleriDal = new SeferlerSeferSaatleriDal();
+            _seferlerSeferSaatleriDal = new SeferlerDal();
         }
 
         List<Sefer> seferler;
-        private SeferlerSeferSaatleriDal _seferlerSeferSaatleriDal;
+        private SeferlerDal _seferlerSeferSaatleriDal;
         public DateTime gidisTarihi;
         public DateTime donusTarihi;
         public string nereden;
@@ -75,6 +75,7 @@ namespace HızlıTrenApp.UI
         }
         private void btnSeferleriListele_Click(object sender, EventArgs e)
         {
+            //Verilerin Doğru olup olmadığının kontrol edilmesi.
             if (Tools.Sorgula(grpBilet))
             {
                 if (cmbNereden.SelectedItem != cmbNereye.SelectedItem)
