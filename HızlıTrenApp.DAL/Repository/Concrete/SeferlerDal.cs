@@ -32,5 +32,21 @@ namespace HızlıTrenApp.DAL.Repository.Concrete
                 return db.Seferler.FirstOrDefault(x => x.SeferYonu.StartsWith(nrdn) && x.SeferYonu.EndsWith(nry));
             }
         }
+
+        public List<Sefer> GetSeferlerByStartWith(string nrdn)
+        {
+            using (Context db=new Context())
+            {
+                return db.Seferler.Where(x => x.SeferYonu.StartsWith(nrdn)).ToList();
+            }
+        }
+
+        public List<Sefer> GetSeferlerByEndWith(string nry)
+        {
+            using (Context db = new Context())
+            {
+                return db.Seferler.Where(x => x.SeferYonu.EndsWith(nry)).ToList();
+            }
+        }
     }
 }
