@@ -30,7 +30,7 @@ namespace HızlıTrenApp.UI
             PictureBox pb2;
             Label lbl1;
             Label lbl2;
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 8; i++)
             {
                 pb1 = new PictureBox();
                 lbl1 = new Label();
@@ -41,12 +41,13 @@ namespace HızlıTrenApp.UI
                 grpBusiness1.Controls.Add(lbl1);
                 if (i < 4)
                 {
-                    pb1.Location = new Point((i * 60) + 13, 10);
-                    lbl1.Location = new Point(pb1.Location.X, pb1.Height + 7);
+                    pb1.Location = new Point((i * 60) + 13, 12);
+                    lbl1.Location = new Point(pb1.Location.X, pb1.Height + 10);
                 }
                 else
                 {
-                    pb1.Location = new Point(lbl1.loca, lbl1.);
+                    pb1.Location = new Point(((i - 4)* 60) + 13, lbl1.Height + pb1.Height + 12);
+                    lbl1.Location = new Point(pb1.Location.X, pb1.Location.Y + 20);
                 }
             }
         }
