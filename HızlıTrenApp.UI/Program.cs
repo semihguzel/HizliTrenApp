@@ -16,8 +16,8 @@ namespace HızlıTrenApp.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            frmAnaSayfa frm = new frmAnaSayfa();
-            Application.Run(new frmKoltukSecimi(frm));
+            //frmAnaSayfa frm = new frmAnaSayfa();
+            Application.Run(new frmAnaSayfa());
         }
     }
 }
