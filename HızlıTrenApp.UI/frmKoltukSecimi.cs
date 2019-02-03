@@ -173,7 +173,8 @@ namespace HızlıTrenApp.UI
             pb.Width = 40;
             pb.Height = 30;
             //pb.BackColor = Color.Crimson;
-            pb.Image = Image.FromFile(@"C:\Users\GamingOS\Documents\GitHub\HizliTrenApp\HızlıTrenApp.UI\Images\Resized_Seats\seat_available_resized_economy.png");
+            pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_available_resized_economy.png");
+
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.Width = pb.Width;
             lbl.Height = 20;
@@ -184,7 +185,7 @@ namespace HızlıTrenApp.UI
             pb.Width = 50;
             pb.Height = 40;
             //pb.BackColor = Color.Crimson;
-            pb.Image = Image.FromFile(@"C:\Users\GamingOS\Documents\GitHub\HizliTrenApp\HızlıTrenApp.UI\Images\Resized_Seats\seat_available_resized_business.png");
+            pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_available_resized_business.png");
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.Width = pb.Width;
             lbl.Height = 15;
