@@ -31,5 +31,16 @@ namespace HızlıTrenApp.DAL.Repository.Concrete
         {
             return _dbContext.Set<BiletBilgi>().ToList();
         }
+
+        public List<BiletBilgi> BusinessTickets()
+        {
+            return _biletBilgiRepository.GetAll().Where(x => x.KoltukNo.Contains("B")).ToList();
+        }
+
+        public List<BiletBilgi> EconomyTickets()
+        {
+            return _biletBilgiRepository.GetAll().Where(x => x.KoltukNo.Contains("E")).ToList();
+        }
+
     }
 }

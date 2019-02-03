@@ -20,12 +20,15 @@ namespace HızlıTrenApp.UI
             InitializeComponent();
             gelenForm = form;
         }
-        List<BiletBilgi> biletListesi;
+        List<BiletBilgi> businessBiletler;
+        List<BiletBilgi> economyBiletler;
         private void frmKoltukSecimi_Load(object sender, EventArgs e)
         {
-            BiletBilgiDal biletBilgiDal = new BiletBilgiDal();
-            biletListesi = biletBilgiDal.TicketList();
+            BiletBilgiDal biletBilgiConcrete = new BiletBilgiDal();
+            businessBiletler = biletBilgiConcrete.BusinessTickets();
+            economyBiletler = biletBilgiConcrete.EconomyTickets();
             KoltuklariOlustur();
+            KoltuklariDoldur(grpBusiness1, grpBusiness2, grpEconomy1, grpEconomy2);
         }
 
         private void KoltuklariOlustur()
@@ -182,15 +185,8 @@ namespace HızlıTrenApp.UI
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.Width = pb.Width;
             lbl.Height = 20;
-            foreach (var item in biletListesi)
-            {
-                if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet && pb.Name.Contains("E"))
-                    pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_woman_resized_economy.png");
-                else if (item.KoltukNo.Contains(pb.Name) && !item.MusterininBileti.Cinsiyet && pb.Name.Contains("E"))
-                    pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_woman_resized_economy.png");
-                else
-                    pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_available_resized_economy.png");
-            }
+
+            pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_available_resized_economy.png");
         }
 
         private void BusinessKoltuk(PictureBox pb, Label lbl)
@@ -200,15 +196,146 @@ namespace HızlıTrenApp.UI
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.Width = pb.Width;
             lbl.Height = 15;
-            foreach (var item in biletListesi)
+            pb.Click += Pb_Click;
+            pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_available_resized_business.png");
+
+        }
+
+        private void Pb_Click(object sender, EventArgs e)
+        {
+            PictureBox tiklanan = sender as PictureBox;
+            MessageBox.Show(tiklanan.Name);
+        }
+
+        private void KoltuklariDoldur(GroupBox grpBusiness1, GroupBox grpBusiness2, GroupBox grpEconomy1, GroupBox grpEconomy2)
+        {
+            #region Business biletlerin dolumu
+
+            foreach (BiletBilgi item in businessBiletler)
             {
-                if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet == true && pb.Name.Contains("B"))
-                    pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_man_resized_business.png");
-                else if (item.KoltukNo.Contains(pb.Name) && item.MusterininBileti.Cinsiyet == false && pb.Name.Contains("B"))
-                    pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_woman_resized_business.png");
+                #region B0-B7 Arası
+
+                if (item.KoltukNo.Last() < '8')
+                {
+                    foreach (Control pb in grpBusiness1.Controls)
+                    {
+                        if (pb is PictureBox)
+                        {
+                            if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet && pb.Name.Contains("B"))
+                            {
+                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_man_resized_business.png";
+                                continue;
+                            }
+                            else if (item.KoltukNo == pb.Name && !item.MusterininBileti.Cinsiyet && pb.Name.Contains("B"))
+                            {
+                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_woman_resized_business.png";
+                                continue;
+                            }
+                            else
+                            {
+                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_available_resized_business.png";
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+                #endregion
+                #region B8-B15 Arası
                 else
-                    pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_available_resized_business.png");
+                {
+                    foreach (Control pb in grpBusiness2.Controls)
+                    {
+                        if (pb is PictureBox)
+                        {
+                            if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet && pb.Name.Contains("B"))
+                            {
+                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_man_resized_business.png";
+                                continue;
+                            }
+                            else if (item.KoltukNo == pb.Name && !item.MusterininBileti.Cinsiyet && pb.Name.Contains("B"))
+                            {
+                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_woman_resized_business.png";
+                                continue;
+                            }
+                            else
+                            {
+                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_available_resized_business.png";
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
             }
+            #endregion
+            #endregion
+
+            #region Economy Biletlerin dolumu
+            foreach (BiletBilgi item in economyBiletler)
+            {
+                #region E0-E12 Arası
+                if (item.KoltukNo.Last() < 12)
+                {
+                    foreach (Control pb in grpEconomy1.Controls)
+                    {
+                        if (pb is PictureBox)
+                        {
+                            if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet && pb.Name.Contains("E"))
+                            {
+                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_man_resized_economy.png";
+                                continue;
+                            }
+                            else if (item.KoltukNo == pb.Name && !item.MusterininBileti.Cinsiyet && pb.Name.Contains("E"))
+                            {
+                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_woman_resized_economy.png";
+                                continue;
+                            }
+                            else
+                            {
+                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_available_resized_economy.png";
+                                continue;
+                            }
+                        }
+                        else
+                            continue;
+                    }
+                }
+                else
+                {
+                    foreach (Control pb in grpEconomy2.Controls)
+                    {
+                        if (pb is PictureBox)
+                        {
+                            if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet && pb.Name.Contains("E"))
+                            {
+                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_man_resized_economy.png";
+                                continue;
+                            }
+                            else if (item.KoltukNo == pb.Name && !item.MusterininBileti.Cinsiyet && pb.Name.Contains("E"))
+                            {
+                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_woman_resized_economy.png";
+                                continue;
+                            }
+                            else
+                            {
+                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_available_resized_economy.png";
+                                continue;
+                            }
+                        }
+                        else
+                            continue;
+                    }
+                }
+                #endregion
+            }
+            #endregion
         }
     }
 }
