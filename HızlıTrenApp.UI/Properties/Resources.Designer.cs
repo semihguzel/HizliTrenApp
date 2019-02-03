@@ -73,6 +73,16 @@ namespace HızlıTrenApp.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap canteen {
+            get {
+                object obj = ResourceManager.GetObject("canteen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hizlitren {
             get {
                 object obj = ResourceManager.GetObject("hizlitren", resourceCulture);
@@ -86,6 +96,16 @@ namespace HızlıTrenApp.UI.Properties {
         internal static System.Drawing.Bitmap visa_PNG17 {
             get {
                 object obj = ResourceManager.GetObject("visa_PNG17", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wc {
+            get {
+                object obj = ResourceManager.GetObject("wc", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

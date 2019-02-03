@@ -164,15 +164,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Chair Images\koltuk_Gri.png" />
-    <Content Include="Chair Images\koltuk_KoyuMavi.png" />
-    <Content Include="Chair Images\koltuk_Kırmızı.png" />
-    <Content Include="Chair Images\koltuk_Mor.png" />
-    <Content Include="Chair Images\koltuk_Pembe.png" />
-    <Content Include="Chair Images\koltuk_Sarı.png" />
-    <Content Include="Chair Images\koltuk_Turkuazi.png" />
-    <Content Include="Chair Images\koltuk_Turuncu.png" />
-    <Content Include="Chair Images\koltuk_Yesil.png" />
+    <Content Include="Images\canteen.png" />
+    <Content Include="Images\Seat Images\koltuk_Gri.png" />
+    <Content Include="Images\Seat Images\koltuk_KoyuMavi.png" />
+    <Content Include="Images\Seat Images\koltuk_Kırmızı.png" />
+    <Content Include="Images\Seat Images\koltuk_Mor.png" />
+    <Content Include="Images\Seat Images\koltuk_Pembe.png" />
+    <Content Include="Images\Seat Images\koltuk_Sarı.png" />
+    <Content Include="Images\Seat Images\koltuk_Turkuazi.png" />
+    <Content Include="Images\Seat Images\koltuk_Turuncu.png" />
+    <Content Include="Images\Seat Images\koltuk_Yesil.png" />
+    <Content Include="Images\wc.png" />
     <Content Include="MetroFramework.txt" />
     <None Include="Resources\3Dsecure.png" />
     <None Include="Resources\visa_PNG17.png" />
