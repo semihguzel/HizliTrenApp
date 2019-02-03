@@ -12,9 +12,11 @@ namespace HızlıTrenApp.UI
 {
 	public partial class frmKoltukSecimi : MetroFramework.Forms.MetroForm
 	{
-		public frmKoltukSecimi()
+        Form gelenForm;
+		public frmKoltukSecimi(Form form)
 		{
 			InitializeComponent();
+            gelenForm = form;
 		}
 	}
 }
