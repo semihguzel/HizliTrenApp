@@ -41,7 +41,7 @@ namespace HızlıTrenApp.UI
                 grpBusiness1.Controls.Add(lbl1);
                 if (i < 4)
                 {
-                    pb1.Location = new Point(i * 40, 10);
+                    pb1.Location = new Point((i * 40) + 20, 10);
                     lbl1.Location = new Point(pb1.Location.X, pb1.Height + 7);
                 }
                 //else
@@ -56,6 +56,7 @@ namespace HızlıTrenApp.UI
             pb.Width = 40;
             pb.Height = 20;
             pb.BackColor = Color.Crimson;
+            lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.Width = pb.Width;
             lbl.Height = 15;
         }
