@@ -29,6 +29,8 @@ namespace HızlıTrenApp.UI
         public string nereye;
         public int yolcuSayisi;
         public string yolcuTipi;
+        public bool ciftMi;
+
         private void frmGiris_Load(object sender, EventArgs e)
         {
             cmbTip.Items.Add("Economy");
@@ -36,7 +38,7 @@ namespace HızlıTrenApp.UI
             cmbTip.SelectedIndex = 0;
             rdbTekyon.Checked = true;
             dtpDonusTarihi.Enabled = false;
-
+            ciftMi = false;
             //ComboBox lara seirlerin eklenmesi
             seferler = new List<Sefer>();
             seferler.AddRange(_seferlerSeferSaatleriDal.GetAllSeferler());
@@ -80,7 +82,7 @@ namespace HızlıTrenApp.UI
             {
                 if (cmbNereden.SelectedItem != cmbNereye.SelectedItem)
                 {
-                    if (dtpGidisTarihi.Value > DateTime.Now)
+                    if (dtpGidisTarihi.Value.Day >= DateTime.Now.Day)
                     {
                         if (dtpDonusTarihi.Enabled != true)
                         {
@@ -144,11 +146,13 @@ namespace HızlıTrenApp.UI
         private void rdbGidisDonus_CheckedChanged(object sender, EventArgs e)
         {
             dtpDonusTarihi.Enabled = true;
+            ciftMi = true;
         }
 
         private void rdbTekyon_CheckedChanged(object sender, EventArgs e)
         {
             dtpDonusTarihi.Enabled = false;
+            ciftMi = false;
         }
     }
 }
