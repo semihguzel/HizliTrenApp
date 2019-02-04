@@ -22,13 +22,120 @@ namespace HızlıTrenApp.UI
         }
         List<BiletBilgi> businessBiletler;
         List<BiletBilgi> economyBiletler;
+        List<BiletBilgi> businessKadinBiletler;
+        List<BiletBilgi> businessErkekBiletler;
+        List<BiletBilgi> economyErkekBiletler;
+        List<BiletBilgi> economyKadinBiletler;
+
+        string economyErkekKoltuk = @"..\..\Images\Resized_Seats\seat_man_resized_economy.png";
+        string economyKadinKoltuk = @"..\..\Images\Resized_Seats\seat_woman_resized_economy.png";
+        string businessErkekKoltuk = @"..\..\Images\Resized_Seats\seat_man_resized_business.png";
+        string businessKadinKoltuk = @"..\..\Images\Resized_Seats\seat_woman_resized_business.png";
+        string businessBosKoltuk = @"..\..\Images\Resized_Seats\seat_available_resized_business.png";
+        string economyBosKoltuk = @"..\..\Images\Resized_Seats\seat_available_resized_economy.png";
         private void frmKoltukSecimi_Load(object sender, EventArgs e)
         {
             BiletBilgiDal biletBilgiConcrete = new BiletBilgiDal();
+
+            businessKadinBiletler = biletBilgiConcrete.BusinessWomanTickets();
+            businessErkekBiletler = biletBilgiConcrete.BusinessManTickets();
+
+            economyKadinBiletler = biletBilgiConcrete.EconomyWomanTickets();
+            economyErkekBiletler = biletBilgiConcrete.EconomyManTickets();
+
             businessBiletler = biletBilgiConcrete.BusinessTickets();
             economyBiletler = biletBilgiConcrete.EconomyTickets();
             KoltuklariOlustur();
-            KoltuklariDoldur(grpBusiness1, grpBusiness2, grpEconomy1, grpEconomy2);
+
+            BusinessKadinlar(grpBusiness1, grpBusiness2);
+            BusinessErkekler(grpBusiness1, grpBusiness2);
+
+            EconomyKadinlar(grpEconomy1, grpEconomy2);
+            EconomyErkekler(grpEconomy1, grpEconomy2);
+        }
+
+        private void EconomyErkekler(GroupBox grpEconomy1, GroupBox grpEconomy2)
+        {
+            foreach (BiletBilgi bilet in economyErkekBiletler)
+            {
+                foreach (Control item in grpEconomy1.Controls)
+                {
+                    if (item is PictureBox && bilet.KoltukNo == item.Name)
+                    {
+                        ((PictureBox)item).ImageLocation = economyErkekKoltuk;
+                    }
+                }
+                foreach (Control item in grpEconomy2.Controls)
+                {
+                    if (item is PictureBox && bilet.KoltukNo == item.Name)
+                    {
+                        ((PictureBox)item).ImageLocation = economyErkekKoltuk;
+                    }
+                }
+            }
+        }
+
+        private void EconomyKadinlar(GroupBox grpEconomy1, GroupBox grpEconomy2)
+        {
+            foreach (BiletBilgi bilet in economyKadinBiletler)
+            {
+                foreach (Control item in grpEconomy1.Controls)
+                {
+                    if (item is PictureBox && bilet.KoltukNo == item.Name)
+                    {
+                        ((PictureBox)item).ImageLocation = economyKadinKoltuk;
+                    }
+                }
+                foreach (Control item in grpEconomy2.Controls)
+                {
+                    if (item is PictureBox && bilet.KoltukNo == item.Name)
+                    {
+                        ((PictureBox)item).ImageLocation = economyKadinKoltuk;
+                    }
+                }
+            }
+        }
+
+        private void BusinessErkekler(GroupBox grpBusiness1, GroupBox grpBusiness2)
+        {
+            foreach (BiletBilgi bilet in businessErkekBiletler)
+            {
+                foreach (Control item in grpBusiness1.Controls)
+                {
+                    if (item is PictureBox && bilet.KoltukNo == item.Name)
+                    {
+                        ((PictureBox)item).ImageLocation = businessErkekKoltuk;
+                    }
+                }
+                foreach (Control item in grpBusiness2.Controls)
+                {
+                    if (item is PictureBox && bilet.KoltukNo == item.Name)
+                    {
+                        ((PictureBox)item).ImageLocation = businessErkekKoltuk;
+                    }
+                }
+            }
+        }
+
+        private void BusinessKadinlar(GroupBox grpBusiness1, GroupBox grpBusiness2)
+        {
+            foreach (BiletBilgi bilet in businessKadinBiletler)
+            {
+                foreach (Control item in grpBusiness1.Controls)
+                {
+                    if (item is PictureBox && bilet.KoltukNo == item.Name)
+                    {
+                        ((PictureBox)item).ImageLocation = businessKadinKoltuk;
+                    }
+                }
+                foreach (Control item in grpBusiness2.Controls)
+                {
+                    if (item is PictureBox && bilet.KoltukNo == item.Name)
+                    {
+                        ((PictureBox)item).ImageLocation = businessKadinKoltuk;
+                    }
+                }
+            }
         }
 
         private void KoltuklariOlustur()
@@ -47,44 +154,49 @@ namespace HızlıTrenApp.UI
             int businessKoltukArasi = 20;
             int businessUsttenBosluk = 20;
             int businessKoltukSayisi = 8;
+
+            lblB1Masa = new Label();
+            lblB1Masa.AutoSize = false;
+            lblB1Masa.TextAlign = ContentAlignment.MiddleCenter;
+            lblB1Masa.Width = 269;
+            lblB1Masa.Height = 40;
+            lblB1Masa.Text = "MASA";
+            lblB1Masa.BackColor = Color.LightGoldenrodYellow;
+            grpBusiness1.Controls.Add(lblB1Masa);
+
+            lblB2Masa = new Label();
+            lblB2Masa.AutoSize = false;
+            lblB2Masa.TextAlign = ContentAlignment.MiddleCenter;
+            lblB2Masa.Width = 269;
+            lblB2Masa.Height = 40;
+            lblB2Masa.Text = "MASA";
+            lblB2Masa.BackColor = Color.LightGoldenrodYellow;
+            grpBusiness2.Controls.Add(lblB2Masa);
+
             for (int i = 0; i < 8; i++)
             {
                 //grpBusiness1
                 pbB1 = new PictureBox();
                 lblB1 = new Label();
-                lblB1Masa = new Label();
                 pbB1.Name = "B" + i;
                 lblB1.Text = pbB1.Name;
                 BusinessKoltuk(pbB1, lblB1);
 
-                lblB1Masa.AutoSize = false;
-                lblB1Masa.TextAlign = ContentAlignment.MiddleCenter;
-                lblB1Masa.Width = 269;
-                lblB1Masa.Height = pbB1.Height;
-                lblB1Masa.Text = "MASA";
-                lblB1Masa.BackColor = Color.LightGoldenrodYellow;
 
-                grpBusiness1.Controls.Add(lblB1Masa);
+
+
                 grpBusiness1.Controls.Add(pbB1);
                 grpBusiness1.Controls.Add(lblB1);
 
                 //grpBusiness2
                 pbB2 = new PictureBox();
                 lblB2 = new Label();
-                lblB2Masa = new Label();
                 pbB2.Name = "B" + businessKoltukSayisi;
                 lblB2.Text = pbB2.Name;
                 businessKoltukSayisi++;
                 BusinessKoltuk(pbB2, lblB2);
 
-                lblB2Masa.AutoSize = false;
-                lblB2Masa.TextAlign = ContentAlignment.MiddleCenter;
-                lblB2Masa.Width = 269;
-                lblB2Masa.Height = pbB1.Height;
-                lblB2Masa.Text = "MASA";
-                lblB2Masa.BackColor = Color.LightGoldenrodYellow;
 
-                grpBusiness2.Controls.Add(lblB2Masa);
                 grpBusiness2.Controls.Add(pbB2);
                 grpBusiness2.Controls.Add(lblB2);
 
@@ -186,7 +298,7 @@ namespace HızlıTrenApp.UI
             lbl.Width = pb.Width;
             lbl.Height = 20;
 
-            pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_available_resized_economy.png");
+            pb.ImageLocation = economyBosKoltuk;
         }
 
         private void BusinessKoltuk(PictureBox pb, Label lbl)
@@ -197,7 +309,7 @@ namespace HızlıTrenApp.UI
             lbl.Width = pb.Width;
             lbl.Height = 15;
             pb.Click += Pb_Click;
-            pb.Image = Image.FromFile(@"..\..\Images\Resized_Seats\seat_available_resized_business.png");
+            pb.ImageLocation = businessBosKoltuk;
 
         }
 
@@ -205,137 +317,6 @@ namespace HızlıTrenApp.UI
         {
             PictureBox tiklanan = sender as PictureBox;
             MessageBox.Show(tiklanan.Name);
-        }
-
-        private void KoltuklariDoldur(GroupBox grpBusiness1, GroupBox grpBusiness2, GroupBox grpEconomy1, GroupBox grpEconomy2)
-        {
-            #region Business biletlerin dolumu
-
-            foreach (BiletBilgi item in businessBiletler)
-            {
-                #region B0-B7 Arası
-
-                if (item.KoltukNo.Last() < '8')
-                {
-                    foreach (Control pb in grpBusiness1.Controls)
-                    {
-                        if (pb is PictureBox)
-                        {
-                            //if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet && pb.Name.Contains("B"))
-                            //{
-                            //    ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_man_resized_business.png";
-                            //    continue;
-                            //}
-							 if (item.KoltukNo == pb.Name && !item.MusterininBileti.Cinsiyet && pb.Name.Contains("B"))
-							{
-								((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_woman_resized_business.png";
-								continue;
-							}
-							//else
-							//{
-							//	((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_available_resized_business.png";
-							//	continue;
-							//}
-						}
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-                #endregion
-                #region B8-B15 Arası
-                else
-                {
-                    foreach (Control pb in grpBusiness2.Controls)
-                    {
-                        if (pb is PictureBox)
-                        {
-                            if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet && pb.Name.Contains("B"))
-                            {
-                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_man_resized_business.png";
-                                continue;
-                            }
-                            else if (item.KoltukNo == pb.Name && !item.MusterininBileti.Cinsiyet && pb.Name.Contains("B"))
-                            {
-                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_woman_resized_business.png";
-                                continue;
-                            }
-                            else
-                            {
-                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_available_resized_business.png";
-                                continue;
-                            }
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            }
-            #endregion
-            #endregion
-
-            #region Economy Biletlerin dolumu
-            foreach (BiletBilgi item in economyBiletler)
-            {
-                #region E0-E12 Arası
-                if (item.KoltukNo.Last() < 12)
-                {
-                    foreach (Control pb in grpEconomy1.Controls)
-                    {
-                        if (pb is PictureBox)
-                        {
-                            if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet && pb.Name.Contains("E"))
-                            {
-                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_man_resized_economy.png";
-                                continue;
-                            }
-                            else if (item.KoltukNo == pb.Name && !item.MusterininBileti.Cinsiyet && pb.Name.Contains("E"))
-                            {
-                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_woman_resized_economy.png";
-                                continue;
-                            }
-                            else
-                            {
-                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_available_resized_economy.png";
-                                continue;
-                            }
-                        }
-                        else
-                            continue;
-                    }
-                }
-                else
-                {
-                    foreach (Control pb in grpEconomy2.Controls)
-                    {
-                        if (pb is PictureBox)
-                        {
-                            if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet && pb.Name.Contains("E"))
-                            {
-                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_man_resized_economy.png";
-                                continue;
-                            }
-                            else if (item.KoltukNo == pb.Name && !item.MusterininBileti.Cinsiyet && pb.Name.Contains("E"))
-                            {
-                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_woman_resized_economy.png";
-                                continue;
-                            }
-                            else
-                            {
-                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_available_resized_economy.png";
-                                continue;
-                            }
-                        }
-                        else
-                            continue;
-                    }
-                }
-                #endregion
-            }
-            #endregion
         }
     }
 }
