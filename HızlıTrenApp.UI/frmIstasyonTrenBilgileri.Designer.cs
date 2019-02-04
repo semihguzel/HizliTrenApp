@@ -76,9 +76,7 @@
             this.cmbIstasyon.Items.AddRange(new object[] {
             "İstanbul",
             "Ankara",
-            "Adana",
             "Eskişehir",
-            "Antalya",
             "Bursa",
             "İzmir"});
             this.cmbIstasyon.Location = new System.Drawing.Point(55, 114);
@@ -90,12 +88,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(341, 295);
             this.Controls.Add(this.cmbIstasyon);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.dtpTarih);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmIstasyonTrenBilgileri";
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Red;

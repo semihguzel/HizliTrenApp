@@ -64,42 +64,61 @@ namespace HızlıTrenApp.UI
             List<BiletBilgi> biletler = new List<BiletBilgi>();
             biletler = _biletBilgiDal.GetByDate(gelenForm.gidisTarihi.Date);
             int[] biletSaat = new int[] { 0, 0, 0, 0, 0 };
+            
             foreach (var item in biletler)
             {
-                if (item.SeferSaati == "09:00")
+                if (item.BiletTipi==gelenForm.yolcuTipi)
                 {
-                    biletSaat[0]++;
-                }
-                else if (item.SeferSaati == "12:00")
-                {
-                    biletSaat[1]++;
-                }
-                else if (item.SeferSaati == "15:00")
-                {
-                    biletSaat[2]++;
-                }
-                else if (item.SeferSaati == "18:00")
-                {
-                    biletSaat[3]++;
-                }
-                else if (item.SeferSaati == "21:00")
-                {
-                    biletSaat[4]++;
-                }
+                    if (item.SeferSaati == "09:00")
+                    {
+                        biletSaat[0]++;
+                    }
+                    else if (item.SeferSaati == "12:00")
+                    {
+                        biletSaat[1]++;
+                    }
+                    else if (item.SeferSaati == "15:00")
+                    {
+                        biletSaat[2]++;
+                    }
+                    else if (item.SeferSaati == "18:00")
+                    {
+                        biletSaat[3]++;
+                    }
+                    else if (item.SeferSaati == "21:00")
+                    {
+                        biletSaat[4]++;
+                    }
+                } 
             }
+
             int sayac = 0;
             foreach (SeferSaat item in seferSaatleri)
             {
+                int kapasite = 0;
                 ListViewItem lstItem = new ListViewItem(gelenForm.nereden);
                 lstItem.SubItems.Add(gelenForm.nereye);
                 lstItem.SubItems.Add(gdsSefer.TahminiVarisSuresi);
-                lstItem.SubItems.Add((gdsSefer.YolcuKapasitesi - biletSaat[sayac]).ToString());
-                lstItem.SubItems.Add(gelenForm.gidisTarihi.ToShortDateString());
-                lstItem.SubItems.Add(item.SeferSaatBilgisi);
-                lstSeferler.Items.Add(lstItem);
+                if (gelenForm.yolcuTipi== "Economy")
+                {
+                    kapasite = 24;
+                }
+                else
+                {
+                    kapasite = 16;
+                }
+                kapasite = kapasite - biletSaat[sayac];
+                if (kapasite >= gelenForm.yolcuSayisi)
+                {
+                    lstItem.SubItems.Add((kapasite).ToString());
+                    lstItem.SubItems.Add(gelenForm.gidisTarihi.ToShortDateString());
+                    lstItem.SubItems.Add(item.SeferSaatBilgisi);
+                    lstSeferler.Items.Add(lstItem);
+                }
                 sayac++;
             }
 
+            
             if (gelenForm.donusTarihi >= gelenForm.gidisTarihi)
             {
 
@@ -108,37 +127,53 @@ namespace HızlıTrenApp.UI
                 int[] biletSaat2 = new int[] { 0, 0, 0, 0, 0 };
                 foreach (var item in biletler2)
                 {
-                    if (item.SeferSaati == "09:00")
+                    if (item.BiletTipi == gelenForm.yolcuTipi)
                     {
-                        biletSaat2[0]++;
-                    }
-                    else if (item.SeferSaati == "12:00")
-                    {
-                        biletSaat2[1]++;
-                    }
-                    else if (item.SeferSaati == "15:00")
-                    {
-                        biletSaat2[2]++;
-                    }
-                    else if (item.SeferSaati == "18:00")
-                    {
-                        biletSaat2[3]++;
-                    }
-                    else if (item.SeferSaati == "21:00")
-                    {
-                        biletSaat2[4]++;
+                        if (item.SeferSaati == "09:00")
+                        {
+                            biletSaat2[0]++;
+                        }
+                        else if (item.SeferSaati == "12:00")
+                        {
+                            biletSaat2[1]++;
+                        }
+                        else if (item.SeferSaati == "15:00")
+                        {
+                            biletSaat2[2]++;
+                        }
+                        else if (item.SeferSaati == "18:00")
+                        {
+                            biletSaat2[3]++;
+                        }
+                        else if (item.SeferSaati == "21:00")
+                        {
+                            biletSaat2[4]++;
+                        }
                     }
                 }
                 int sayac1 = 0;
                 foreach (SeferSaat item in seferSaatleri)
                 {
+                    int kapasite = 0;
                     ListViewItem lstItem = new ListViewItem(gelenForm.nereye);
                     lstItem.SubItems.Add(gelenForm.nereden);
                     lstItem.SubItems.Add(dnsSefer.TahminiVarisSuresi);
-                    lstItem.SubItems.Add((dnsSefer.YolcuKapasitesi - biletSaat2[sayac1]).ToString());
-                    lstItem.SubItems.Add(gelenForm.donusTarihi.ToShortDateString());
-                    lstItem.SubItems.Add(item.SeferSaatBilgisi);
-                    lstSeferler.Items.Add(lstItem);
+                    if (gelenForm.yolcuTipi == "Economy")
+                    {
+                        kapasite = 24;
+                    }
+                    else
+                    {
+                        kapasite = 16;
+                    }
+                    kapasite = kapasite - biletSaat2[sayac1];
+                    if (kapasite >= gelenForm.yolcuSayisi)
+                    {
+                        lstItem.SubItems.Add((kapasite).ToString());
+                        lstItem.SubItems.Add(gelenForm.donusTarihi.ToShortDateString());
+                        lstItem.SubItems.Add(item.SeferSaatBilgisi);
+                        lstSeferler.Items.Add(lstItem);
+                    }
                     sayac1++;
                 }
             }

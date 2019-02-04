@@ -72,5 +72,10 @@ namespace HızlıTrenApp.UI
         {
             ListeyiDoldur(1, gelenForm.istasyon);
         }
+
+        private void frmIstasyonAyrinti_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            gelenForm.Show();
+        }
     }
 }
