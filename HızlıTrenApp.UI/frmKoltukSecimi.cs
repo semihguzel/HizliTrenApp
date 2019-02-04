@@ -221,22 +221,22 @@ namespace HızlıTrenApp.UI
                     {
                         if (pb is PictureBox)
                         {
-                            if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet && pb.Name.Contains("B"))
-                            {
-                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_man_resized_business.png";
-                                continue;
-                            }
-                            else if (item.KoltukNo == pb.Name && !item.MusterininBileti.Cinsiyet && pb.Name.Contains("B"))
-                            {
-                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_woman_resized_business.png";
-                                continue;
-                            }
-                            else
-                            {
-                                ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_available_resized_business.png";
-                                continue;
-                            }
-                        }
+                            //if (item.KoltukNo == pb.Name && item.MusterininBileti.Cinsiyet && pb.Name.Contains("B"))
+                            //{
+                            //    ((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_man_resized_business.png";
+                            //    continue;
+                            //}
+							 if (item.KoltukNo == pb.Name && !item.MusterininBileti.Cinsiyet && pb.Name.Contains("B"))
+							{
+								((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_woman_resized_business.png";
+								continue;
+							}
+							//else
+							//{
+							//	((PictureBox)pb).ImageLocation = @"..\..\Images\Resized_Seats\seat_available_resized_business.png";
+							//	continue;
+							//}
+						}
                         else
                         {
                             continue;
