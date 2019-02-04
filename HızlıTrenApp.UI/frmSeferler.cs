@@ -92,7 +92,7 @@ namespace HızlıTrenApp.UI
             {
                 ListViewItem lstItem = new ListViewItem(gelenForm.nereden);
                 lstItem.SubItems.Add(gelenForm.nereye);
-                lstItem.SubItems.Add(gdsSefer.TahminiVarisSüresi);
+                lstItem.SubItems.Add(gdsSefer.TahminiVarisSuresi);
                 lstItem.SubItems.Add((gdsSefer.YolcuKapasitesi - biletSaat[sayac]).ToString());
                 lstItem.SubItems.Add(gelenForm.gidisTarihi.ToShortDateString());
                 lstItem.SubItems.Add(item.SeferSaatBilgisi);
@@ -134,7 +134,7 @@ namespace HızlıTrenApp.UI
                 {
                     ListViewItem lstItem = new ListViewItem(gelenForm.nereye);
                     lstItem.SubItems.Add(gelenForm.nereden);
-                    lstItem.SubItems.Add(dnsSefer.TahminiVarisSüresi);
+                    lstItem.SubItems.Add(dnsSefer.TahminiVarisSuresi);
                     lstItem.SubItems.Add((dnsSefer.YolcuKapasitesi - biletSaat2[sayac1]).ToString());
                     lstItem.SubItems.Add(gelenForm.donusTarihi.ToShortDateString());
                     lstItem.SubItems.Add(item.SeferSaatBilgisi);

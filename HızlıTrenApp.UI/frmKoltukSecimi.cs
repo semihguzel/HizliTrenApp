@@ -62,7 +62,7 @@ namespace HızlıTrenApp.UI
                 lblB1Masa.Width = 269;
                 lblB1Masa.Height = pbB1.Height;
                 lblB1Masa.Text = "MASA";
-                lblB1Masa.BackColor = Color.DimGray;
+                lblB1Masa.BackColor = Color.LightGoldenrodYellow;
 
                 grpBusiness1.Controls.Add(lblB1Masa);
                 grpBusiness1.Controls.Add(pbB1);
@@ -82,7 +82,7 @@ namespace HızlıTrenApp.UI
                 lblB2Masa.Width = 269;
                 lblB2Masa.Height = pbB1.Height;
                 lblB2Masa.Text = "MASA";
-                lblB2Masa.BackColor = Color.DimGray;
+                lblB2Masa.BackColor = Color.LightGoldenrodYellow;
 
                 grpBusiness2.Controls.Add(lblB2Masa);
                 grpBusiness2.Controls.Add(pbB2);
