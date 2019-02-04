@@ -242,11 +242,13 @@ namespace HızlıTrenApp.UI
             if (gelenForm.donusTarihi.Day == gelenForm.gidisTarihi.Day)
             {
                 MessageBox.Show("Gidiş tarihi dönüş tarihinden sonra olamaz!");
+                btnIleri.Enabled = false;
             }
             else
             {
                 gelenForm.gidisTarihi = gelenForm.gidisTarihi.Date.AddDays(1);
                 SeferleriDoldur();
+                btnGeri.Enabled = true;
             }
 
         }
@@ -257,10 +259,12 @@ namespace HızlıTrenApp.UI
             {
                 gelenForm.gidisTarihi = gelenForm.gidisTarihi.Date.AddDays(-1);
                 SeferleriDoldur();
+                btnIleri.Enabled = true;
             }
             else
             {
                 MessageBox.Show("Şimdiki tarihten önceki seferleri görüntülenmemektedir.");
+                btnGeri.Enabled = false;
             }
         }
 
