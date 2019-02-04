@@ -30,7 +30,7 @@
 		{
             this.btnKalkis = new MetroFramework.Controls.MetroButton();
             this.btnVaris = new MetroFramework.Controls.MetroButton();
-            this.lstİstasyonSeferleri = new System.Windows.Forms.ListView();
+            this.lstIstasyonSeferleri = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -56,21 +56,21 @@
             this.btnVaris.Text = "Varis";
             this.btnVaris.Click += new System.EventHandler(this.btnVaris_Click);
             // 
-            // lstİstasyonSeferleri
+            // lstIstasyonSeferleri
             // 
-            this.lstİstasyonSeferleri.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstIstasyonSeferleri.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.lstİstasyonSeferleri.GridLines = true;
-            this.lstİstasyonSeferleri.Location = new System.Drawing.Point(24, 64);
-            this.lstİstasyonSeferleri.Name = "lstİstasyonSeferleri";
-            this.lstİstasyonSeferleri.Size = new System.Drawing.Size(753, 366);
-            this.lstİstasyonSeferleri.TabIndex = 2;
-            this.lstİstasyonSeferleri.UseCompatibleStateImageBehavior = false;
-            this.lstİstasyonSeferleri.View = System.Windows.Forms.View.Details;
+            this.lstIstasyonSeferleri.GridLines = true;
+            this.lstIstasyonSeferleri.Location = new System.Drawing.Point(24, 64);
+            this.lstIstasyonSeferleri.Name = "lstIstasyonSeferleri";
+            this.lstIstasyonSeferleri.Size = new System.Drawing.Size(753, 366);
+            this.lstIstasyonSeferleri.TabIndex = 2;
+            this.lstIstasyonSeferleri.UseCompatibleStateImageBehavior = false;
+            this.lstIstasyonSeferleri.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -102,7 +102,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 490);
-            this.Controls.Add(this.lstİstasyonSeferleri);
+            this.Controls.Add(this.lstIstasyonSeferleri);
             this.Controls.Add(this.btnVaris);
             this.Controls.Add(this.btnKalkis);
             this.Name = "frmIstasyonAyrinti";
@@ -119,7 +119,7 @@
 		#endregion
         private MetroFramework.Controls.MetroButton btnKalkis;
         private MetroFramework.Controls.MetroButton btnVaris;
-        private System.Windows.Forms.ListView lstİstasyonSeferleri;
+        private System.Windows.Forms.ListView lstIstasyonSeferleri;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;

@@ -98,7 +98,7 @@ namespace HızlıTrenApp.UI
                 int kapasite = 0;
                 ListViewItem lstItem = new ListViewItem(gelenForm.nereden);
                 lstItem.SubItems.Add(gelenForm.nereye);
-                lstItem.SubItems.Add(gdsSefer.TahminiVarisSüresi);
+                lstItem.SubItems.Add(gdsSefer.TahminiVarisSuresi);
                 if (gelenForm.yolcuTipi== "Economy")
                 {
                     kapasite = 24;
@@ -157,7 +157,7 @@ namespace HızlıTrenApp.UI
                     int kapasite = 0;
                     ListViewItem lstItem = new ListViewItem(gelenForm.nereye);
                     lstItem.SubItems.Add(gelenForm.nereden);
-                    lstItem.SubItems.Add(dnsSefer.TahminiVarisSüresi);
+                    lstItem.SubItems.Add(dnsSefer.TahminiVarisSuresi);
                     if (gelenForm.yolcuTipi == "Economy")
                     {
                         kapasite = 24;
