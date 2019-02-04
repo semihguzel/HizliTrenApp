@@ -34,7 +34,7 @@ namespace HızlıTrenApp.UI
 
         private void ListeyiDoldur(int secim, string istasyon)
         {
-            lstİstasyonSeferleri.Items.Clear();
+            lstIstasyonSeferleri.Items.Clear();
             seferSaatleri = new List<SeferSaat>();
             seferSaatleri = _seferSaatleri.GetAll();
             seferler = new List<Sefer>();
@@ -56,9 +56,9 @@ namespace HızlıTrenApp.UI
                     lstItem.Text = kalkisVaris[0];
                     lstItem.SubItems.Add(kalkisVaris[1]);
                     lstItem.SubItems.Add(items.SeferSaatBilgisi);
-                    lstItem.SubItems.Add(item.TahminiVarisSüresi);
+                    lstItem.SubItems.Add(item.TahminiVarisSuresi);
                     lstItem.SubItems.Add(gelenForm.tarih.ToShortDateString());
-                    lstİstasyonSeferleri.Items.Add(lstItem);
+                    lstIstasyonSeferleri.Items.Add(lstItem);
                 }
             }
         }
