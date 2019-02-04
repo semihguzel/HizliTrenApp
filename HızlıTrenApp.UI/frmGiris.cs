@@ -31,7 +31,7 @@ namespace HızlıTrenApp.UI
         public string yolcuTipi;
         private void frmGiris_Load(object sender, EventArgs e)
         {
-            cmbTip.Items.Add("Ekonomi");
+            cmbTip.Items.Add("Economy");
             cmbTip.Items.Add("Business");
             cmbTip.SelectedIndex = 0;
             rdbTekyon.Checked = true;

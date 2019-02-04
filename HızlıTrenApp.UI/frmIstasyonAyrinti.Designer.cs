@@ -110,6 +110,7 @@
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "İstasyondaki Seferler";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Right;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmIstasyonAyrinti_FormClosed);
             this.Load += new System.EventHandler(this.frmIstasyonAyrinti_Load);
             this.ResumeLayout(false);
 
