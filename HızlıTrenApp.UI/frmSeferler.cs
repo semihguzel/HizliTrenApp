@@ -180,7 +180,11 @@ namespace HızlıTrenApp.UI
                     lvi.SubItems.Add(kapasite.ToString());
                     lvi.SubItems.Add(seferTarihi.ToShortDateString());
                     int saat = Convert.ToInt32(item.SeferSaatBilgisi.Substring(0, 2));
-                    if (saat <= DateTime.Now.Hour && seferTarihi.Date == DateTime.Now.Date) continue;
+                    if (saat <= DateTime.Now.Hour && seferTarihi.Date == DateTime.Now.Date)
+                    {
+                        sayac++;
+                        continue;
+                    } 
                     lvi.SubItems.Add(item.SeferSaatBilgisi);
                     listView.Items.Add(lvi);
                 }
