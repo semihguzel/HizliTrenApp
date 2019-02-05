@@ -252,6 +252,7 @@
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Seferler";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Right;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSeferler_FormClosed);
             this.Load += new System.EventHandler(this.frmSeferler_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

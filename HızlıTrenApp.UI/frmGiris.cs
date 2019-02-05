@@ -39,7 +39,8 @@ namespace HızlıTrenApp.UI
             rdbTekyon.Checked = true;
             dtpDonusTarihi.Enabled = false;
             ciftMi = false;
-            //ComboBox lara seirlerin eklenmesi
+
+            //ComboBox lara sehirlerin eklenmesi
             seferler = new List<Sefer>();
             seferler.AddRange(_seferlerSeferSaatleriDal.GetAllSeferler());
             foreach (Sefer item in seferler)

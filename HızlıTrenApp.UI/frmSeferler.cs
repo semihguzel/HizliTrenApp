@@ -21,20 +21,16 @@ namespace HızlıTrenApp.UI
             InitializeComponent();
             gelenForm = frm;
             _seferlerDal = new SeferlerDal();
-            _seferlerSeferSaatleriDal = new SeferlerSeferSaatleriDal();
             _seferSaatleriDal = new SeferSaatleriDal();
             _biletBilgiDal = new BiletBilgiDal();
         }
 
         private SeferlerDal _seferlerDal;
-        private SeferlerSeferSaatleriDal _seferlerSeferSaatleriDal;
         private SeferSaatleriDal _seferSaatleriDal;
         private BiletBilgiDal _biletBilgiDal;
-        List<SeferSeferSaat> gdsSeferSeferSaatleri;
-        List<SeferSeferSaat> dnsSeferSeferSaatleri;
         Sefer gdsSefer;
         List<SeferSaat> seferSaatleri;
-        Sefer dnsSefer;
+
         //Gidiş ve dönüş seferleri listviewdeki sıraya göre listeye doldurulmuştur.
         public List<string> secilenGidisSeferi;
         public List<string> secilenDonusSeferi;
@@ -42,199 +38,52 @@ namespace HızlıTrenApp.UI
         private void frmSeferler_Load(object sender, EventArgs e)
         {
             secilenGidisSeferi = new List<string>();
+            lstSeferlerDonus.Enabled = false;
             if (gelenForm.ciftMi)
             {
                 secilenDonusSeferi = new List<string>();
+                lstSeferlerDonus.Enabled = true;
             }
-            dnsSefer = new Sefer();
-            dnsSefer = _seferlerDal.GetSeferIDByFilter(gelenForm.nereye, gelenForm.nereden);
             gdsSefer = new Sefer();
             gdsSefer = _seferlerDal.GetSeferIDByFilter(gelenForm.nereden, gelenForm.nereye);
             int id1 = gdsSefer.SeferID;
-            int id2 = dnsSefer.SeferID;
 
             seferSaatleri = new List<SeferSaat>();
             seferSaatleri = _seferSaatleriDal.GetAll();
 
-            gdsSeferSeferSaatleri = new List<SeferSeferSaat>();
-            gdsSeferSeferSaatleri = _seferlerSeferSaatleriDal.GetBySeferID(id1);
-
-            dnsSeferSeferSaatleri = new List<SeferSeferSaat>();
-            dnsSeferSeferSaatleri = _seferlerSeferSaatleriDal.GetBySeferID(id2);
-
             SeferleriDoldur();
-        }
-
-
-        private void SeferleriDoldur()
-        {
-            lstSeferlerGidis.Items.Clear();
-
-            List<BiletBilgi> biletler = new List<BiletBilgi>();
-            biletler = _biletBilgiDal.GetByDate(gelenForm.gidisTarihi.Date);
-            int[] biletSaat = new int[] { 0, 0, 0, 0, 0 };
-
-            foreach (var item in biletler)
-            {
-                if (item.BiletTipi == gelenForm.yolcuTipi)
-                {
-                    if (item.SeferSaati == "09:00")
-                    {
-                        biletSaat[0]++;
-                    }
-                    else if (item.SeferSaati == "12:00")
-                    {
-                        biletSaat[1]++;
-                    }
-                    else if (item.SeferSaati == "15:00")
-                    {
-                        biletSaat[2]++;
-                    }
-                    else if (item.SeferSaati == "18:00")
-                    {
-                        biletSaat[3]++;
-                    }
-                    else if (item.SeferSaati == "21:00")
-                    {
-                        biletSaat[4]++;
-                    }
-                }
-            }
-
-            int sayac = 0;
-            foreach (SeferSaat item in seferSaatleri)
-            {
-                int kapasite = 0;
-                ListViewItem lstItem = new ListViewItem(gelenForm.nereden);
-                lstItem.SubItems.Add(gelenForm.nereye);
-                lstItem.SubItems.Add(gdsSefer.TahminiVarisSuresi);
-                if (gelenForm.yolcuTipi == "Economy")
-                {
-                    kapasite = 24;
-                }
-                else
-                {
-                    kapasite = 16;
-                }
-                kapasite = kapasite - biletSaat[sayac];
-                if (kapasite >= gelenForm.yolcuSayisi)
-                {
-                    lstItem.SubItems.Add((kapasite).ToString());
-                    lstItem.SubItems.Add(gelenForm.gidisTarihi.ToShortDateString());
-                    int saat = Convert.ToInt32(item.SeferSaatBilgisi.Substring(0, 2));
-                    if (saat <= DateTime.Now.Hour && gelenForm.gidisTarihi.Date == DateTime.Now.Date) continue;
-                    lstItem.SubItems.Add(item.SeferSaatBilgisi);
-                    lstSeferlerGidis.Items.Add(lstItem);
-                }
-                sayac++;
-            }
-
-
-            if (gelenForm.ciftMi)
-            {
-                lstSeferlerDonus.Items.Clear();
-                List<BiletBilgi> biletler2 = new List<BiletBilgi>();
-                biletler2 = _biletBilgiDal.GetByDate(gelenForm.donusTarihi.Date);
-                int[] biletSaat2 = new int[] { 0, 0, 0, 0, 0 };
-                foreach (var item in biletler2)
-                {
-                    if (item.BiletTipi == gelenForm.yolcuTipi)
-                    {
-                        if (item.SeferSaati == "09:00")
-                        {
-                            biletSaat2[0]++;
-                        }
-                        else if (item.SeferSaati == "12:00")
-                        {
-                            biletSaat2[1]++;
-                        }
-                        else if (item.SeferSaati == "15:00")
-                        {
-                            biletSaat2[2]++;
-                        }
-                        else if (item.SeferSaati == "18:00")
-                        {
-                            biletSaat2[3]++;
-                        }
-                        else if (item.SeferSaati == "21:00")
-                        {
-                            biletSaat2[4]++;
-                        }
-                    }
-                }
-                int sayac1 = 0;
-                foreach (SeferSaat item in seferSaatleri)
-                {
-                    int kapasite = 0;
-                    ListViewItem lstItem = new ListViewItem(gelenForm.nereye);
-                    lstItem.SubItems.Add(gelenForm.nereden);
-                    lstItem.SubItems.Add(dnsSefer.TahminiVarisSuresi);
-                    if (gelenForm.yolcuTipi == "Economy")
-                    {
-                        kapasite = 24;
-                    }
-                    else
-                    {
-                        kapasite = 16;
-                    }
-                    kapasite = kapasite - biletSaat2[sayac1];
-                    if (kapasite >= gelenForm.yolcuSayisi)
-                    {
-                        lstItem.SubItems.Add((kapasite).ToString());
-                        lstItem.SubItems.Add(gelenForm.donusTarihi.ToShortDateString());
-                        int saat = Convert.ToInt32(item.SeferSaatBilgisi.Substring(0, 2));
-                        if (saat <= DateTime.Now.Hour && gelenForm.donusTarihi.Date == DateTime.Now.Date) continue;
-                        lstItem.SubItems.Add(item.SeferSaatBilgisi);
-                        lstSeferlerDonus.Items.Add(lstItem);
-                    }
-                    sayac1++;
-                }
-            }
         }
 
         private void btnDevam_Click(object sender, EventArgs e)
         {
-            if (secilenGidisSeferi.Count>0)
+            //Burada bir sonraki sayfaya geçmeden önce seferin gidiş ve dönüş bilgilerinin dolu olup olmadığını kontrol ettiriyorum.
+            if (secilenGidisSeferi.Count > 0)
             {
-                if (gelenForm.ciftMi && secilenDonusSeferi.Count>0)
+                if (gelenForm.ciftMi)
                 {
-                    frmKoltukSecimi gelenForm2 = new frmKoltukSecimi(this);
-                    Hide();
-                    GroupBox kutu = (GroupBox)this.Parent;
-                    Form anaForm = (Form)kutu.Parent.Parent;
-                    gelenForm2.Width = kutu.Width;
-                    gelenForm2.Height = kutu.Height;
-                    gelenForm2.MdiParent = anaForm;
-                    kutu.Controls.Remove(this);
-                    kutu.Controls.Add(gelenForm2);
-                    gelenForm2.Show();
-                    gelenForm2.Location = Point.Empty;
+                    if (secilenDonusSeferi.Count > 0)
+                    {
+                        KoltukSecimiFormunaGecis();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lütfen Bir Dönüş Seferi Seçiniz...");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen Bir Dönüş Seferi Seçiniz...");
+                    KoltukSecimiFormunaGecis();
                 }
-                
             }
             else
             {
                 MessageBox.Show("Lütfen Gidiş Seferi Seçiniz...");
             }
-            
         }
 
         private void btnAnasayfa_Click(object sender, EventArgs e)
         {
-            Hide();
-            GroupBox kutu = (GroupBox)this.Parent;
-            Form anaForm = (Form)kutu.Parent.Parent;
-            gelenForm.Width = kutu.Width;
-            gelenForm.Height = kutu.Height;
-            gelenForm.MdiParent = anaForm;
-            kutu.Controls.Remove(this);
-            kutu.Controls.Add(gelenForm);
-            gelenForm.Show();
-            gelenForm.Location = Point.Empty;
+            AnaSayfayaGec();
         }
 
         private void btnIleri_Click(object sender, EventArgs e)
@@ -280,6 +129,65 @@ namespace HızlıTrenApp.UI
             secilenDonusSeferi.AddRange(ListeleriDoldur(secilenDonusSeferi, lstSeferlerDonus));
         }
 
+        private void frmSeferler_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            AnaSayfayaGec();
+        }
+
+        //Bu metodda gidiş ve dönüş seferleri olan ana veriler toplanıp, daha sonra dinamik bir metod olan SeferleriDoldur2() methoduna gönderdik.
+        private void SeferleriDoldur()
+        {
+
+            List<BiletBilgi> biletler = new List<BiletBilgi>();
+            biletler = _biletBilgiDal.GetByDate(gelenForm.gidisTarihi.Date);
+            int[] biletSaat = new int[] { 0, 0, 0, 0, 0 };
+            biletSaat = BiletSayilariniHesapla(biletler, biletSaat);
+
+            SeferleriDoldur2(ref lstSeferlerGidis, biletSaat, gelenForm.gidisTarihi, gelenForm.nereden, gelenForm.nereye);
+
+            if (gelenForm.ciftMi)
+            {
+                List<BiletBilgi> biletler2 = new List<BiletBilgi>();
+                biletler2 = _biletBilgiDal.GetByDate(gelenForm.donusTarihi.Date);
+                int[] biletSaat2 = new int[] { 0, 0, 0, 0, 0 };
+                biletSaat2 = BiletSayilariniHesapla(biletler2, biletSaat2);
+
+                SeferleriDoldur2(ref lstSeferlerDonus, biletSaat2, gelenForm.donusTarihi, gelenForm.nereye, gelenForm.nereden);
+            }
+        }
+
+        public void SeferleriDoldur2(ref ListView listView, int[] biletSaat, DateTime seferTarihi, string nereden, string nereye)
+        {
+            listView.Items.Clear();
+            int sayac = 0;
+            foreach (SeferSaat item in seferSaatleri)
+            {
+                int kapasite = 0;
+                ListViewItem lvi = new ListViewItem(nereden);
+                lvi.SubItems.Add(nereye);
+                lvi.SubItems.Add(gdsSefer.TahminiVarisSuresi);
+                if (gelenForm.yolcuTipi == "Economy")
+                {
+                    kapasite = 24;
+                }
+                else
+                {
+                    kapasite = 16;
+                }
+                kapasite = kapasite - biletSaat[sayac];
+                if (kapasite >= gelenForm.yolcuSayisi)
+                {
+                    lvi.SubItems.Add(kapasite.ToString());
+                    lvi.SubItems.Add(seferTarihi.ToShortDateString());
+                    int saat = Convert.ToInt32(item.SeferSaatBilgisi.Substring(0, 2));
+                    if (saat <= DateTime.Now.Hour && seferTarihi.Date == DateTime.Now.Date) continue;
+                    lvi.SubItems.Add(item.SeferSaatBilgisi);
+                    listView.Items.Add(lvi);
+                }
+                sayac++;
+            }
+        }
+
         //Seçilen seferin Verilerini doldurmak için böyle bir metod yazıldı.
         private List<string> ListeleriDoldur(List<string> liste, ListView lst)
         {
@@ -290,6 +198,69 @@ namespace HızlıTrenApp.UI
                 sayac++;
             }
             return liste;
+        }
+
+        //Bu metod sayesinde gidiş ve dönüş biletlerini saatlerini göre gruplandırarak sayısını hesapladık.
+        public int[] BiletSayilariniHesapla(List<BiletBilgi> biletler, int[] biletSaat)
+        {
+            foreach (var item in biletler)
+            {
+                if (item.BiletTipi == gelenForm.yolcuTipi)
+                {
+                    if (item.SeferSaati == "09:00")
+                    {
+                        biletSaat[0]++;
+                    }
+                    else if (item.SeferSaati == "12:00")
+                    {
+                        biletSaat[1]++;
+                    }
+                    else if (item.SeferSaati == "15:00")
+                    {
+                        biletSaat[2]++;
+                    }
+                    else if (item.SeferSaati == "18:00")
+                    {
+                        biletSaat[3]++;
+                    }
+                    else if (item.SeferSaati == "21:00")
+                    {
+                        biletSaat[4]++;
+                    }
+                }
+            }
+            return biletSaat;
+        }
+
+        //Ana Sayfaya Geçiş Kodlarını method haline getirdim.
+        private void AnaSayfayaGec()
+        {
+            Hide();
+            GroupBox kutu = (GroupBox)this.Parent;
+            Form anaForm = (Form)kutu.Parent.Parent;
+            gelenForm.Width = kutu.Width;
+            gelenForm.Height = kutu.Height;
+            gelenForm.MdiParent = anaForm;
+            kutu.Controls.Remove(this);
+            kutu.Controls.Add(gelenForm);
+            gelenForm.Show();
+            gelenForm.Location = Point.Empty;
+        }
+
+        //Koltuk Seçimi formuna geçiş kodlarını metod haline getirdim.
+        private void KoltukSecimiFormunaGecis()
+        {
+            frmKoltukSecimi gelenForm2 = new frmKoltukSecimi(this);
+            Hide();
+            GroupBox kutu = (GroupBox)this.Parent;
+            Form anaForm = (Form)kutu.Parent.Parent;
+            gelenForm2.Width = kutu.Width;
+            gelenForm2.Height = kutu.Height;
+            gelenForm2.MdiParent = anaForm;
+            kutu.Controls.Remove(this);
+            kutu.Controls.Add(gelenForm2);
+            gelenForm2.Show();
+            gelenForm2.Location = Point.Empty;
         }
     }
 }
