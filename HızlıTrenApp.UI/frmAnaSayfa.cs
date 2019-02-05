@@ -123,12 +123,9 @@ namespace HızlıTrenApp.UI
 
         private void mlIstasyonTren_Click(object sender, EventArgs e)
         {
-            frmKoltukSecimi frmKoltuk = new frmKoltukSecimi();
-            FormKontrolluGetir(frmKoltuk);
+            frmIstasyonTrenBilgileri trenBilgileri = new frmIstasyonTrenBilgileri();
+            FormKontrolluGetir(trenBilgileri);
             //Tools.FormKontrolluGetir(this, frmKoltuk, grpAnaKutu, kutu, istasyonMu, mlBilet, mlIstasyonTren);
-
         }
-
-
     }
 }
