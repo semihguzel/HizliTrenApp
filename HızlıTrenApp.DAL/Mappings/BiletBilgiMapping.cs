@@ -13,9 +13,11 @@ namespace HızlıTrenApp.DAL
         public BiletBilgiMapping()
         {
             HasKey(x => x.BiletBilgiID);
-            Property(x => x.KoltukNo).HasColumnType("tinyint");
+            Property(x => x.KoltukNo).HasMaxLength(10);
             Property(x => x.AlimTarihi).HasColumnType("datetime2");
             Property(x => x.BiletFiyati).HasColumnType("money");
+            Property(x => x.BiletTarihi).HasColumnType("datetime2");
+            Property(x => x.SeferSaati).HasColumnType("nvarchar").HasMaxLength(5);
 
             ToTable("BiletBilgileri");
             

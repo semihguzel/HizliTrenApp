@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using HızlıTrenApp.DATA;
+using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
@@ -13,7 +14,7 @@ namespace HızlıTrenApp.UI
 {
     public class Tools
     {
-        public static void FormGetir(Form anaForm, MetroForm gelenForm, GroupBox anaKutu,GroupBox kutu, bool kutuVarMi,MetroLink mlBilet)
+        public static void FormGetir(Form anaForm, MetroForm gelenForm, GroupBox anaKutu, GroupBox kutu, bool kutuVarMi, MetroLink mlBilet)
         {
             if (!kutuVarMi)
             {
@@ -59,7 +60,7 @@ namespace HızlıTrenApp.UI
             gelenForm.Location = Point.Empty;
         }
 
-        public static void FormKontrolluGetir(Form anaForm, MetroForm gelenForm, GroupBox anaKutu, GroupBox kutu, bool istasyonMu, MetroLink mlBilet,MetroLink mlIstasyonTren)
+        public static void FormKontrolluGetir(Form anaForm, MetroForm gelenForm, GroupBox anaKutu, GroupBox kutu, bool istasyonMu, MetroLink mlBilet, MetroLink mlIstasyonTren)
         {
             Form kutuIciForm = null;
             foreach (Control item in anaKutu.Controls)
@@ -84,5 +85,30 @@ namespace HızlıTrenApp.UI
             }
         }
 
+        public static bool Sorgula(GroupBox grp)
+        {
+            foreach (Control item in grp.Controls)
+            {
+
+                if (item is ComboBox)
+                {
+                    if (((ComboBox)item).SelectedIndex == -1) return false;
+                }
+            }
+            return true;
+        }
+
+        public static string PNRNoYap(BiletBilgi biletBilgi)
+        {
+            string koltukNo = biletBilgi.KoltukNo;
+            string tarih = string.Format($"{biletBilgi.BiletTarihi,0:MM/dd/yy}");
+
+            string t1 = tarih.Substring(0, 2);
+            string t2 = tarih.Substring(3, 2);
+            string t3 = tarih.Substring(6, 2);
+            string sonuc = t1 + t2 + t3 + koltukNo;
+
+            return sonuc;
+        }
     }
 }

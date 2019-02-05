@@ -44,6 +44,7 @@
             this.cmbNereden = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.grpBilet = new System.Windows.Forms.GroupBox();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrYolcuSayisi)).BeginInit();
@@ -55,7 +56,7 @@
             this.pictureBox1.Image = global::HızlıTrenApp.UI.Properties.Resources.hizlitren;
             this.pictureBox1.Location = new System.Drawing.Point(357, 87);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(381, 309);
+            this.pictureBox1.Size = new System.Drawing.Size(381, 295);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -65,7 +66,7 @@
             this.btnSeferleriListele.Name = "btnSeferleriListele";
             this.btnSeferleriListele.Size = new System.Drawing.Size(292, 35);
             this.btnSeferleriListele.Style = MetroFramework.MetroColorStyle.Red;
-            this.btnSeferleriListele.TabIndex = 7;
+            this.btnSeferleriListele.TabIndex = 8;
             this.btnSeferleriListele.Text = "Seferleri Listele";
             this.btnSeferleriListele.Click += new System.EventHandler(this.btnSeferleriListele_Click);
             // 
@@ -73,7 +74,7 @@
             // 
             this.nmrYolcuSayisi.Location = new System.Drawing.Point(104, 276);
             this.nmrYolcuSayisi.Maximum = new decimal(new int[] {
-            99,
+            40,
             0,
             0,
             0});
@@ -103,7 +104,7 @@
             this.dtpGidisTarihi.Location = new System.Drawing.Point(22, 173);
             this.dtpGidisTarihi.Name = "dtpGidisTarihi";
             this.dtpGidisTarihi.Size = new System.Drawing.Size(200, 21);
-            this.dtpGidisTarihi.TabIndex = 5;
+            this.dtpGidisTarihi.TabIndex = 4;
             // 
             // rdbGidisDonus
             // 
@@ -111,10 +112,11 @@
             this.rdbGidisDonus.Location = new System.Drawing.Point(107, 34);
             this.rdbGidisDonus.Name = "rdbGidisDonus";
             this.rdbGidisDonus.Size = new System.Drawing.Size(86, 15);
-            this.rdbGidisDonus.TabIndex = 4;
+            this.rdbGidisDonus.TabIndex = 1;
             this.rdbGidisDonus.TabStop = true;
             this.rdbGidisDonus.Text = "Gidiş Dönüş";
             this.rdbGidisDonus.UseVisualStyleBackColor = true;
+            this.rdbGidisDonus.CheckedChanged += new System.EventHandler(this.rdbGidisDonus_CheckedChanged);
             // 
             // rdbTekyon
             // 
@@ -122,10 +124,11 @@
             this.rdbTekyon.Location = new System.Drawing.Point(22, 34);
             this.rdbTekyon.Name = "rdbTekyon";
             this.rdbTekyon.Size = new System.Drawing.Size(64, 15);
-            this.rdbTekyon.TabIndex = 4;
+            this.rdbTekyon.TabIndex = 0;
             this.rdbTekyon.TabStop = true;
             this.rdbTekyon.Text = "Tek Yön";
             this.rdbTekyon.UseVisualStyleBackColor = true;
+            this.rdbTekyon.CheckedChanged += new System.EventHandler(this.rdbTekyon_CheckedChanged);
             // 
             // metroLabel6
             // 
@@ -161,7 +164,7 @@
             this.cmbNereye.Location = new System.Drawing.Point(182, 94);
             this.cmbNereye.Name = "cmbNereye";
             this.cmbNereye.Size = new System.Drawing.Size(121, 29);
-            this.cmbNereye.TabIndex = 2;
+            this.cmbNereye.TabIndex = 3;
             // 
             // metroLabel3
             // 
@@ -179,7 +182,7 @@
             this.cmbTip.Location = new System.Drawing.Point(182, 268);
             this.cmbTip.Name = "cmbTip";
             this.cmbTip.Size = new System.Drawing.Size(121, 29);
-            this.cmbTip.TabIndex = 2;
+            this.cmbTip.TabIndex = 7;
             // 
             // cmbNereden
             // 
@@ -201,6 +204,7 @@
             // 
             // grpBilet
             // 
+            this.grpBilet.Controls.Add(this.metroLabel7);
             this.grpBilet.Controls.Add(this.btnSeferleriListele);
             this.grpBilet.Controls.Add(this.nmrYolcuSayisi);
             this.grpBilet.Controls.Add(this.dtpDonusTarihi);
@@ -223,6 +227,18 @@
             this.grpBilet.TabStop = false;
             this.grpBilet.Text = "Bilet";
             // 
+            // metroLabel7
+            // 
+            this.metroLabel7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.metroLabel7.ForeColor = System.Drawing.Color.DarkRed;
+            this.metroLabel7.Location = new System.Drawing.Point(23, 298);
+            this.metroLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(291, 19);
+            this.metroLabel7.TabIndex = 8;
+            this.metroLabel7.Text = "18\'yas alti yolcular icin ucret ayri hesap edilecektir.";
+            this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
@@ -235,6 +251,7 @@
             // 
             // frmGiris
             // 
+            this.AcceptButton = this.btnSeferleriListele;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(751, 441);
@@ -242,6 +259,7 @@
             this.Controls.Add(this.grpBilet);
             this.Controls.Add(this.metroLabel1);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmGiris";
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Red;
@@ -276,5 +294,6 @@
 		private MetroFramework.Controls.MetroLabel metroLabel2;
 		private System.Windows.Forms.GroupBox grpBilet;
 		private MetroFramework.Controls.MetroLabel metroLabel1;
-	}
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+    }
 }

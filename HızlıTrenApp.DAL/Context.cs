@@ -15,7 +15,7 @@ namespace HızlıTrenApp.DAL
         {
             Database.Connection.ConnectionString = "server=.; database = HizliTrenDb; uid = sa; pwd = 123";
         }
-
+        //saasdasd
         public DbSet<Bilet> Biletler { get; set; }
         public DbSet<BiletBilgi> BiletBilgileri { get; set; }
         public DbSet<Calisan> Calisanlar { get; set; }

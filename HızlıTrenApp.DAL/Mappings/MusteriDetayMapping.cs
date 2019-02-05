@@ -15,6 +15,7 @@ namespace HızlıTrenApp.DAL
             HasKey(x => x.MusteriDetayID);
             Property(x => x.Adres).HasMaxLength(150);
             Property(x => x.Telefon).HasColumnType("nchar").HasMaxLength(15);
+            Property(x => x.Email).HasMaxLength(30);
 
             ToTable("MusteriDetaylari");
         }

@@ -15,8 +15,10 @@ namespace HızlıTrenApp.DAL
             HasKey(x => x.MusteriID);
             Property(x => x.Ad).HasMaxLength(30);
             Property(x => x.Soyad).HasMaxLength(30);
+            Property(x => x.DogumTarihi).HasColumnType("datetime2");
 
             Ignore(x => x.TamAdi);
+            Ignore(x => x.Yas);
 
             ToTable("Musteriler");
 

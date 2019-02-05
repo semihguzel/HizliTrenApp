@@ -15,6 +15,8 @@ namespace HızlıTrenApp.DAL
             HasKey(x => x.BiletID);
             HasRequired(x => x.BiletinBilgisi).WithRequiredPrincipal(x => x.BilgininBileti);
 
+            Property(x => x.PNRNo).HasMaxLength(10);
+
             ToTable("Biletler");
         }
     }

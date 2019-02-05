@@ -67,11 +67,18 @@
             this.metroButton1.Size = new System.Drawing.Size(200, 39);
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "İstasyon-Tren Bilgileri";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // cmbIstasyon
             // 
             this.cmbIstasyon.FormattingEnabled = true;
             this.cmbIstasyon.ItemHeight = 23;
+            this.cmbIstasyon.Items.AddRange(new object[] {
+            "İstanbul",
+            "Ankara",
+            "Eskişehir",
+            "Bursa",
+            "İzmir"});
             this.cmbIstasyon.Location = new System.Drawing.Point(55, 114);
             this.cmbIstasyon.Name = "cmbIstasyon";
             this.cmbIstasyon.Size = new System.Drawing.Size(200, 29);
@@ -81,12 +88,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(341, 295);
             this.Controls.Add(this.cmbIstasyon);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.dtpTarih);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmIstasyonTrenBilgileri";
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Red;

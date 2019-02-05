@@ -25,7 +25,9 @@ namespace HızlıTrenApp.DAL.Repository.Concrete
         public List<Calisan> CalisanList()
         {
             return _calisanRepository.GetAll().ToList();//GetAll metodunun yanına linq sorgusu yazılabiliyor. GetAll'un normal yali db.Calisanlar'dır. EFRepository'de bu şekilde tanımlanmıştır. Eğer GetAll geriye direkt olarak tablonun listesini döndürmesini istiyorsanız ToList() komutunu yazmanız gerekir. İstenirse grup içerisinde konusarak GetAll komutunun gelen tablonun listesini döndürmesini EFRepository üzerinden sağlayabiliriz. Aşağıya da bu komutun EFRepository kullanılmadan nasıl kodlanacağını belirteceğim. Siz de ileride EFRepository'de olmayan metodlarınızı bu şekilde yazabilirsiniz.
-            return _dbContext.Set<Calisan>().ToList();//Burada Set<> içerisinde Calisan yerleştirilerek işlem yapılması gerekir. _dbContext bir DbContext tipinde ve bizim veritabanımız ile iletişime geçtiğimiz Context class'ının tipinde olmadığı için Set<Calisan>() yazarak gerekli linq komutlarını yazmamız gerekir. Eğer aklınıza takılan bir şey var ise bana sormanız yeterli. İyi çalışmalar
+            //return _dbContext.Set<Calisan>().ToList();//Burada Set<> içerisinde Calisan yerleştirilerek işlem yapılması gerekir. _dbContext bir DbContext tipinde ve bizim veritabanımız ile iletişime geçtiğimiz Context class'ının tipinde olmadığı için Set<Calisan>() yazarak gerekli linq komutlarını yazmamız gerekir. Eğer aklınıza takılan bir şey var ise bana sormanız yeterli. İyi çalışmalar
+            //Bu frmAnasayfanin designer inda yaptigin onemli bir sey yok dimi, yok sadece listview değiştirdim çalıltırayım mı?
+            //olur. yaptığım değişiklikler sadece bu iki form sana simdi bir form gostericem orda bir degisiklik yaptiysan soylersin
         }
     }
 }

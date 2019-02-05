@@ -12,6 +12,14 @@ namespace HızlıTrenApp.DATA
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public bool Cinsiyet { get; set; }
+        public DateTime DogumTarihi { get; set; }
+        public int Yas
+        {
+            get
+            {
+                return (DateTime.Now.Year - DogumTarihi.Year);
+            }
+        }
         public string TamAdi
         {
             get

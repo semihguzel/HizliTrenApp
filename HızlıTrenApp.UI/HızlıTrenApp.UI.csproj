@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
     </Reference>
@@ -61,6 +62,12 @@
     <Compile Include="frmAnaSayfa.Designer.cs">
       <DependentUpon>frmAnaSayfa.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBiletlerim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBiletlerim.Designer.cs">
+      <DependentUpon>frmBiletlerim.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGiris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +92,18 @@
     <Compile Include="frmKoltukSecimi.Designer.cs">
       <DependentUpon>frmKoltukSecimi.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOdeme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOdeme.Designer.cs">
+      <DependentUpon>frmOdeme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRezervasyonlarim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRezervasyonlarim.Designer.cs">
+      <DependentUpon>frmRezervasyonlarim.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSeferler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +116,9 @@
     <EmbeddedResource Include="frmAnaSayfa.resx">
       <DependentUpon>frmAnaSayfa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBiletlerim.resx">
+      <DependentUpon>frmBiletlerim.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGiris.resx">
       <DependentUpon>frmGiris.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmKoltukSecimi.resx">
       <DependentUpon>frmKoltukSecimi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOdeme.resx">
+      <DependentUpon>frmOdeme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRezervasyonlarim.resx">
+      <DependentUpon>frmRezervasyonlarim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeferler.resx">
       <DependentUpon>frmSeferler.cs</DependentUpon>
@@ -137,8 +165,36 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\canteen.png" />
+    <None Include="Images\kapi.png" />
+    <Content Include="Images\seat_available.png" />
+    <Content Include="Images\seat_available_resized_business.png" />
+    <Content Include="Images\seat_available_resized_economy.png" />
+    <Content Include="Images\seat_man.png" />
+    <Content Include="Images\seat_man_resized_business.png" />
+    <Content Include="Images\seat_man_resized_economy.png" />
+    <Content Include="Images\seat_reserved.png" />
+    <Content Include="Images\seat_reserved_resized_business.png" />
+    <Content Include="Images\seat_reserved_resized_economy.png" />
+    <Content Include="Images\seat_woman.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\seat_woman_resized_business.png" />
+    <Content Include="Images\seat_woman_resized_economy.png" />
+    <Content Include="Images\wc.png" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\3Dsecure.png" />
+    <None Include="Resources\visa_PNG17.png" />
     <None Include="Resources\hizlitren.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HızlıTrenApp.DAL\HızlıTrenApp.DAL.csproj">
+      <Project>{9EFD49AF-A067-40C3-B48C-33E9FB8FD512}</Project>
+      <Name>HızlıTrenApp.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HızlıTrenApp.DATA\HızlıTrenApp.DATA.csproj">
+      <Project>{5efea947-7b58-4e72-a1f6-f6d8e7d55387}</Project>
+      <Name>HızlıTrenApp.DATA</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
